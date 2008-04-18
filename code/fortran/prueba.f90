@@ -23,7 +23,7 @@ open(unit=1,file="gauss_data.txt",status="old",action="read",position="rewind")
    end do
 close(unit=1,status="keep")
 
-a=3
+a=(/4,5,15/)
 
 covar = 1
 covar(1,1) = 0
