@@ -30,7 +30,9 @@ SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
 		size(alpha,1),size(alpha,2)/),'mrqmin: ma')
 	mfit=count(maska)
 	if (alamda < 0.0) then
+                
 		allocate(atry(ma),beta(ma),da(ma,1))
+                
 		alamda=0.001_sp
 		call mrqcof(a,alpha,beta)
 		ochisq=chisq
@@ -39,8 +41,10 @@ SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
 	covar(1:mfit,1:mfit)=alpha(1:mfit,1:mfit)
 	call diagmult(covar(1:mfit,1:mfit),1.0_sp+alamda)
 	da(1:mfit,1)=beta(1:mfit)
+        !print*,covar(1:mfit,1:mfit)
 	call gaussj(covar(1:mfit,1:mfit),da(1:mfit,1:1))
-	if (alamda == 0.0) then
+	!print*,"ne"
+        if (alamda == 0.0) then
 		call covsrt(covar,maska)
 		call covsrt(alpha,maska)
 		deallocate(atry,beta,da)
