@@ -1,27 +1,51 @@
 program iv
-use nr, only: bessk1, qromb
+use nr, only: midinf,qromo
 use nrtype
-external integrand
 
-REAL(kind=8) :: c,epsilon,t,v
+INTERFACE
+FUNCTION integrand(x)
+use nrtype
+
+REAL(kind=8),PARAMETER :: e=1.602176487E-19,k=8.617343E-5
+REAL(SP), DIMENSION(:), INTENT(IN) :: x
+REAL(SP), DIMENSION(size(x)) :: integrand
+END FUNCTION integrand
+
+end interface
+
+
+
+
+REAL(kind=8) :: c,epsilon,t
 REAL(kind=8),PARAMETER :: e=1.602176487E-19,k=8.617343E-5
 integer :: n,m,signo,l,puntos
-REAL(SP) :: i,ia,ib
+REAL(SP) :: i,ia,ib,v
 
-!epsilon = 0.002
+!do n = 1,10000
+!print*,n,integrand((/ 1.0/(n*n) , 2.0 /))
+!end do
+!pause
+
+i=0.0
+epsilon = 0.002
 t = 5
-!c = 0.01
-ia=1
-ib=2
+c = 0.01
+
 
 open(unit=1,file="iv_teorico.txt",status="replace",action="write",position="rewind")
-v=2
-puntos=1
-do n=-puntos,puntos
-   print*,integrand(1)
-   call trapzd(integrand,ia,ib,i,100)
+v=2.0
+puntos=100
+
+   ia=1e-4
+   ib=1.
+   i = i + qromo(integrand,ia,ib,midinf)
+   ia=1e-20
+   ib=1e-4
+   i = i + qromo(integrand,ia,ib,midinf)
+   ia=1.
+   ib=1e20
+   i = i + qromo(integrand,ia,ib,midinf)   
    print*, i
-end do
 close(unit=1,status="keep")
 
 !-------------------
