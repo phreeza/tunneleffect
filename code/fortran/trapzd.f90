@@ -18,7 +18,7 @@
 	else
 		it=2**(n-2)
 		del=(b-a)/it
-		fsum=sum(func(arth(a+0.5_sp*del,del,it)))
+		fsum = sum(func(arth(a+0.5_sp*del,del,it)))
 		s=0.5_sp*(s+del*fsum)
 	end if
 	END SUBROUTINE trapzd
