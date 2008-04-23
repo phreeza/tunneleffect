@@ -25,6 +25,7 @@ open(unit=1,file=file_name,status="old",action="read",position="rewind")
       end if
       read(unit=1,fmt=*,iostat=io) v(n),i(n)
       n=n+1
+	  print*, v(n),i(n)
    end do
 close(unit=1,status="keep")
 

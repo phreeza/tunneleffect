@@ -1,24 +1,19 @@
-FUNCTION integrand(x)
+FUNCTION integrand(x,v,temp,epsilon)
 use nrtype
 
 REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5
 REAL(SP), DIMENSION(:), INTENT(IN) :: x
 REAL(SP), DIMENSION(size(x)) :: integrand
-integer :: n
-!integrand = (x+epsilon)/((x*(x+2*epsilon))**(0.5)) * ( fermi(x+epsilon-e*v) - fermi(x+epsilon+e*v) )  
+REAL(SP) :: v,temp,epsilon
+INTEGER :: n
 
-REAL(SP) :: c,epsilon,t
-REAL(SP) :: i,ia,ib,v
-epsilon = 0.002
-t = 5
-c = 0.01
-v=-.001
-
-
+!print*,"integrand: hola, antes del do. esto es x:",x
 do n = 1,size(x)
+!print*,fermi(x(n)),v,temp,epsilon
 integrand(n) = (x(n)+epsilon)/((x(n)*(x(n)+2*epsilon))**(0.5)) * ( fermi(x(n)+epsilon-v) - fermi(x(n)+epsilon+v) )
 !print*,x(n),integrand(n)
 end do
+
 
 CONTAINS
 FUNCTION fermi(y)

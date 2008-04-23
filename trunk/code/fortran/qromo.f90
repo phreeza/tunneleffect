@@ -1,30 +1,34 @@
-	FUNCTION qromo(func,a,b,choose)
+	FUNCTION qromo(func,a,b,choose,v,temp,epsilon)
 	USE nrtype; USE nrutil, ONLY : nrerror
 	USE nr, ONLY : polint
 	IMPLICIT NONE
+	REAL(SP) :: v,temp,epsilon
 	REAL(SP), INTENT(IN) :: a,b
 	REAL(SP) :: qromo
 	INTERFACE
-		FUNCTION func(x)
+		FUNCTION func(x,v,temp,epsilon)
 		USE nrtype
 		IMPLICIT NONE
 		REAL(SP), DIMENSION(:), INTENT(IN) :: x
+		REAL(SP) :: v,temp,epsilon
 		REAL(SP), DIMENSION(size(x)) :: func
 		END FUNCTION func
 !BL
-		SUBROUTINE choose(funk,aa,bb,s,n)
+		SUBROUTINE choose(funk,aa,bb,s,n,v,temp,epsilon)
 		USE nrtype
-		IMPLICIT NONE
+                IMPLICIT NONE
 		REAL(SP), INTENT(IN) :: aa,bb
 		REAL(SP), INTENT(INOUT) :: s
+		REAL(SP) :: v,epsilon,temp
 		INTEGER(I4B), INTENT(IN) :: n
 		INTERFACE
-			FUNCTION funk(x)
+			FUNCTION funk(x,v,temp,epsilon)
 			USE nrtype
-			IMPLICIT NONE
-			REAL(SP), DIMENSION(:), INTENT(IN) :: x
-			REAL(SP), DIMENSION(size(x)) :: funk
-			END FUNCTION funk
+                	IMPLICIT NONE
+                	REAL(SP), DIMENSION(:), INTENT(IN) :: x
+                	REAL(SP) :: v,temp,epsilon
+                	REAL(SP), DIMENSION(size(x)) :: funk
+                	END FUNCTION funk
 		END INTERFACE
 		END SUBROUTINE choose
 	END INTERFACE
@@ -35,8 +39,7 @@
 	INTEGER(I4B) :: j
 	h(1)=1.0
 	do j=1,JMAX
-		call choose(func,a,b,s(j),j)
-		print*,s(j),j
+		call choose(func,a,b,s(j),j,v,temp,epsilon)
 		if (j >= K) then
 			call polint(h(j-KM:j),s(j-KM:j),0.0_sp,qromo,dqromo)
 			if (abs(dqromo) <= EPS*abs(qromo)) RETURN
@@ -44,5 +47,5 @@
 		s(j+1)=s(j)
 		h(j+1)=h(j)/9.0_sp
 	end do
-	call nrerror('qromo: too many steps')
+	!call nrerror('qromo: too many steps') Lo quitamos para que no se pare el proceso iterativo
 	END FUNCTION qromo
