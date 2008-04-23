@@ -1,51 +1,55 @@
 program iv
-use nr, only: midinf,qromo
 use nrtype
+use nr, only: midinf,qromo
 
 INTERFACE
-FUNCTION integrand(x)
+FUNCTION integrand(x,v,temp,epsilon)
 use nrtype
-
-REAL(kind=8),PARAMETER :: e=1.602176487E-19,k=8.617343E-5
+REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5
 REAL(SP), DIMENSION(:), INTENT(IN) :: x
 REAL(SP), DIMENSION(size(x)) :: integrand
+REAL(SP) :: v,epsilon,temp
 END FUNCTION integrand
+END INTERFACE
 
-end interface
+REAL(SP) :: c,v,epsilon,temp
+REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.003
+INTEGER :: n,m,signo,l,puntos
+REAL(SP) :: i,ia,ib
 
-
-
-
-REAL(kind=8) :: c,epsilon,t
-REAL(kind=8),PARAMETER :: e=1.602176487E-19,k=8.617343E-5
-integer :: n,m,signo,l,puntos
-REAL(SP) :: i,ia,ib,v
 
 !do n = 1,10000
 !print*,n,integrand((/ 1.0/(n*n) , 2.0 /))
 !end do
 !pause
 
-i=0.0
-epsilon = 0.002
-t = 5
+
+epsilon = 0.0020001
+temp = 0.5
 c = 0.01
 
 
 open(unit=1,file="iv_teorico.txt",status="replace",action="write",position="rewind")
-v=2.0
-puntos=100
 
-   ia=1e-4
-   ib=1.
-   i = i + qromo(integrand,ia,ib,midinf)
+puntos=1000
+
+do n=-puntos,puntos
+v=real(n)/puntos*vmax
+i=0.0
+   print*,n,i,v,vmax
    ia=1e-20
    ib=1e-4
-   i = i + qromo(integrand,ia,ib,midinf)
-   ia=1.
+   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon)
+   ia=1e-4
+   ib=1.0
+   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon)
+   ia=1.0
    ib=1e20
-   i = i + qromo(integrand,ia,ib,midinf)   
-   print*, i
+   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon)   
+	write(unit=1,fmt=*) v,i
+	print*,n,i,v,vmax
+end do
+   
 close(unit=1,status="keep")
 
 !-------------------

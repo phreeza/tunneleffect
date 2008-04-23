@@ -1591,16 +1591,18 @@ MODULE nr
 		END SUBROUTINE midexp
 	END INTERFACE
 	INTERFACE
-		SUBROUTINE midinf(funk,aa,bb,s,n)
+		SUBROUTINE midinf(funk,aa,bb,s,n,v,temp,epsilon)
 		USE nrtype
 		REAL(SP), INTENT(IN) :: aa,bb
 		REAL(SP), INTENT(INOUT) :: s
+		REAL(SP) :: v,temp,epsilon
 		INTEGER(I4B), INTENT(IN) :: n
 		INTERFACE
-			FUNCTION funk(x)
+			FUNCTION funk(x,v,temp,epsilon)
 			USE nrtype
 			REAL(SP), DIMENSION(:), INTENT(IN) :: x
 			REAL(SP), DIMENSION(size(x)) :: funk
+			REAL(SP) :: v,temp,epsilon
 			END FUNCTION funk
 		END INTERFACE
 		END SUBROUTINE midinf
@@ -2051,28 +2053,30 @@ MODULE nr
 		END FUNCTION qromb
 	END INTERFACE
 	INTERFACE
-		FUNCTION qromo(func,a,b,choose)
+		FUNCTION qromo(func,a,b,choose,v,temp,epsilon)
 		USE nrtype
 		REAL(SP), INTENT(IN) :: a,b
 		REAL(SP) :: qromo
 		INTERFACE
-			FUNCTION func(x)
+			FUNCTION func(x,v,temp,epsilon)
 			USE nrtype
 			REAL(SP), DIMENSION(:), INTENT(IN) :: x
 			REAL(SP), DIMENSION(size(x)) :: func
 			END FUNCTION func
 		END INTERFACE
 		INTERFACE
-			SUBROUTINE choose(funk,aa,bb,s,n)
+			SUBROUTINE choose(funk,aa,bb,s,n,v,temp,epsilon)
 			USE nrtype
 			REAL(SP), INTENT(IN) :: aa,bb
 			REAL(SP), INTENT(INOUT) :: s
+			REAL(SP) :: v,epsilon,temp
 			INTEGER(I4B), INTENT(IN) :: n
 			INTERFACE
-				FUNCTION funk(x)
+				FUNCTION funk(x,v,temp,epsilon)
 				USE nrtype
 				REAL(SP), DIMENSION(:), INTENT(IN) :: x
 				REAL(SP), DIMENSION(size(x)) :: funk
+				REAL(SP) :: v,epsilon,temp
 				END FUNCTION funk
 			END INTERFACE
 			END SUBROUTINE choose
