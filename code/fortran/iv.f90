@@ -25,31 +25,26 @@ REAL(SP) :: i,ia,ib
 
 
 epsilon = 0.0020001
-temp = 0.5
+temp = 5.0
 c = 0.01
 
 
 open(unit=1,file="iv_teorico.txt",status="replace",action="write",position="rewind")
 
-puntos=1000
+puntos=100
 
 do n=-puntos,puntos
 v=real(n)/puntos*vmax
 i=0.0
    print*,n,i,v,vmax
-   ia=1e-20
-   ib=1e-4
-   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon)
    ia=1e-4
    ib=1.0
-   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon)
-   ia=1.0
-   ib=1e20
-   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon)   
+   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon) 
 	write(unit=1,fmt=*) v,i
 	print*,n,i,v,vmax
 end do
    
+i = i*c
 close(unit=1,status="keep")
 
 !-------------------
