@@ -12,7 +12,7 @@ REAL(SP) :: alamda
 LOGICAL(LGT), DIMENSION(3) :: maska
 integer :: io,n,ii
 
-open(unit=1,file="iv_teorico.txt",status="old",action="read",position="rewind")
+open(unit=1,file="iv_experimental.txt",status="old",action="read",position="rewind")
    n=1
    io=0
    do
@@ -20,7 +20,7 @@ open(unit=1,file="iv_teorico.txt",status="old",action="read",position="rewind")
          exit
       end if
       read(unit=1,fmt=*,iostat=io) veff(n),ieff(n)
-      print*,veff(n),ieff(n)
+      !print*,veff(n),ieff(n)
 	  n=n+1
    end do
 close(unit=1,status="keep")
@@ -33,7 +33,7 @@ i(ii)=ieff(ii)
 end do
 sig=0.05
 
-a=(/0.002,5.0,0.01/)
+a=(/0.0009,2.0,0.006/)
 
 covar = 1
 
@@ -45,9 +45,10 @@ alpha=covar
 
 print*, "Before the loop"
 do ii=1,100
-print*,"before call"
 call mrqmin(v,i,sig,a,maska,covar,alpha,chisq,bcs,alamda)
-print*,a,chisq
+
+print*,"iter:",ii,a,"chisq:",chisq,"alamda",alamda
+!pause
 end do
 
 print*,"After. I have finished"

@@ -71,10 +71,15 @@ SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
 	INTEGER(I4B) :: j,k,l,m
 	REAL(SP), DIMENSION(size(x),size(a)) :: dyda
 	REAL(SP), DIMENSION(size(x)) :: dy,sig2i,wt,ymod
-print*, "hola, estoy en medio del mrqmin, antes del funcs",a
+    !print*, "hola, estoy en medio del mrqmin, antes del funcs",a
+	!print *,"antes del call", size(y),size(ymod),size(dy),size(x),ymod
+
 	call funcs(x,a,ymod,dyda)
+	
 	sig2i=1.0_sp/(sig**2)
+	!print *,"despues del call" , size(y),size(ymod),size(dy),size(x)
 	dy=y-ymod
+	
 	j=0
 	do l=1,ma
 		if (maska(l)) then
@@ -84,6 +89,7 @@ print*, "hola, estoy en medio del mrqmin, antes del funcs",a
 			do m=1,l
 				if (maska(m)) then
 					k=k+1
+					
 					alpha(j,k)=dot_product(wt,dyda(:,m))
 					alpha(k,j)=alpha(j,k)
 				end if

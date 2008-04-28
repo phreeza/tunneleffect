@@ -19,7 +19,7 @@ CONTAINS
 FUNCTION fermi(y)
 REAL(SP),INTENT(IN) :: y
 REAL(SP) :: fermi
-	fermi = 1 / ( 1 + exp(y/(k*t)) )
+	fermi = 1 / ( 1 + exp(y/(k*temp)) )
 END FUNCTION fermi
 
 END FUNCTION integrand
