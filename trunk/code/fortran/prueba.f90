@@ -31,9 +31,9 @@ do ii=1, n-2
 v(ii)=veff(ii)
 i(ii)=ieff(ii)
 end do
-sig=0.05
+sig=1e-7
 
-a=(/0.0009,2.0,0.006/)
+a=(/0.00094,1.0,0.0063/)
 
 covar = 1
 

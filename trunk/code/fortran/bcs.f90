@@ -18,7 +18,7 @@ END INTERFACE
 
 REAL(SP), DIMENSION(:,:), INTENT(OUT) :: didparam
 REAL(SP) :: c,epsilon,temp
-REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.003,hEpsilon=0.000001,hTemp=0.01
+REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.003,hEpsilon=0.000001,hTemp=0.00001
 INTEGER :: n,m,signo,l,puntos
 REAL(SP) :: ia,ib
 REAL(SP),DIMENSION(:) :: param
@@ -44,12 +44,18 @@ int=0.0
 print*,"param",param
 do n=1,size(v)
 !v=real(n)/puntos*vmax
-   ia=1e-4
-   ib=1.
-   int(n) = int(n) + qromo(integrand,ia,ib,midinf,v(n),temp,epsilon)
+   !print*,k*temp-epsilon+v(n),k*temp-epsilon-v(n)
+   ia=1e-6
+   ib=maxval(k*temp-epsilon+v)*10
+   int(n) = qromo(integrand,ia,ib,midinf,v(n),temp,epsilon)
+   int(n) = int(n) + sqrt(ia*(2*epsilon+ia))*(1/(1+exp((epsilon-v(n))/(k*temp)))-1/(1+exp((epsilon+v(n))/(k*temp))))
+   !print*,sqrt(ia*(2*epsilon+ia))*(1/(1+exp((epsilon-v(n))/(k*temp)))-1/(1+exp((epsilon+v(n))/(k*temp))))/int(n)
    didparam(n,1) =  - (int(n) -  qromo(integrand,ia,ib,midinf,v(n),temp,epsilon+hEpsilon))/hEpsilon
-   
-   didparam(n,2) = - (int(n) -  qromo(integrand,ia,ib,midinf,v(n),temp+hTemp,epsilon))/hTemp
+   didparam(n,1) = didparam(n,1)+sqrt(ia*(2*epsilon+hEpsilon+ia))*(1/(1+exp((epsilon+hEpsilon-v(n))/(k*temp))) &
+   & -1/(1+exp((epsilon+hEpsilon+v(n))/(k*temp))))/hEpsilon
+   didparam(n,2) = - (int(n) -  qromo(integrand,ia,ib,midinf,v(n),temp+hTemp,epsilon))/hTemp 
+   didparam(n,2) = didparam(n,2) + sqrt(ia*(2*epsilon+ia))*(1/(1+exp((epsilon-v(n))/(k*(temp+hTemp)))) &
+   &-1/(1+exp((epsilon+v(n))/(k*(temp+hTemp)))))/hTemp
    didparam(n,3) = 0.0
    !ia=1e-4
    !ib=1.0
