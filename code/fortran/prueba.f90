@@ -12,6 +12,7 @@ REAL(SP) :: alamda
 LOGICAL(LGT), DIMENSION(3) :: maska
 integer :: io,n,ii
 
+!WE READ THE EXPERIMENTAL DATA FILE WITH UNKNOWN NUMBER OF ENTRIES
 open(unit=1,file="iv_experimental.txt",status="old",action="read",position="rewind")
    n=1
    io=0
@@ -31,25 +32,23 @@ do ii=1, n-2
 v(ii)=veff(ii)
 i(ii)=ieff(ii)
 end do
-sig=1e-7
 
-a=(/0.00094,1.0,0.0063/)
+sig=5e-8 !Este es el error de las intensidades, debido a la inestabilidad de las medidas
 
-covar = 1
+a=(/0.0014,1.0,0.0063/) !INITIAL PARAMETER VALUES FOR THE FIT
 
-maska=(/.true.,.true.,.true./)
-covar = 2
-chisq=1
-alamda=-0.1
-alpha=covar
+maska=(/.true.,.false.,.true./)	!The program fits the parameter with its covar value=true
 
-print*, "Before the loop"
-do ii=1,100
-call mrqmin(v,i,sig,a,maska,covar,alpha,chisq,bcs,alamda)
+alamda=-0.1	!The initial step of Levenberg-Marquardt needs two iterations and this initial value of the alamda
+			!The fitting uses the gradient, but with the factor alambda
 
-print*,"iter:",ii,a,"chisq:",chisq,"alamda",alamda
-!pause
+
+do ii=1,100	!ITERATIONS
+	call mrqmin(v,i,sig,a,maska,covar,alpha,chisq,bcs,alamda)
+	print*,"Iteration:",ii,"Parameters; Epsilon:",a(1),"Temperature:",a(2),"Normal-Normal Conductance:",a(3)
+	print*,"Iteration:",ii,"Chi square:",chisq,"Alamda:",alamda
 end do
+
 
 print*,"After. I have finished"
 !------------------
