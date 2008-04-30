@@ -1,6 +1,6 @@
 program iv
 use nrtype
-use nr, only: midinf,qromo
+use nr, only: midpnt,qromo
 
 INTERFACE
 FUNCTION integrand(x,v,temp,epsilon)
@@ -13,35 +13,28 @@ END FUNCTION integrand
 END INTERFACE
 
 REAL(SP) :: c,v,epsilon,temp
-REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.003
+REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.1
 INTEGER :: n,m,signo,l,puntos
 REAL(SP) :: i,ia,ib
 
 
-!do n = 1,10000
-!print*,n,integrand((/ 1.0/(n*n) , 2.0 /))
-!end do
-!pause
-
-
-epsilon = 0.0020001
+epsilon = 0.002
 temp = 5.0
 c = 0.01
 
 
 open(unit=1,file="iv_teorico.txt",status="replace",action="write",position="rewind")
-
-puntos=100
+puntos=200
 
 do n=-puntos,puntos
 v=real(n)/puntos*vmax
 i=0.0
-   print*,n,i,v,vmax
    ia=1e-4
-   ib=1.0
-   i = i + qromo(integrand,ia,ib,midinf,v,temp,epsilon) 
+   ib=vmax + 2*epsilon
+   i = i + qromo(integrand,ia,ib,midpnt,v,temp,epsilon) &
+		& + sqrt(ia*(2*epsilon+ia))*(1/(1+exp((epsilon-v)/(k*temp)))-1/(1+exp((epsilon+v)/(k*temp))))
+	print*,n,i,v
 	write(unit=1,fmt=*) v,i
-	print*,n,i,v,vmax
 end do
    
 i = i*c
