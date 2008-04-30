@@ -1,8 +1,8 @@
-SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
+SUBROUTINE mrqmin(x,y,sigx,sigy,a,maska,covar,alpha,chisq,funcs,alamda)
 	USE nrtype; USE nrutil, ONLY : assert_eq,diagmult
 	USE nr, ONLY : covsrt,gaussj
 	IMPLICIT NONE
-	REAL(SP), DIMENSION(:), INTENT(IN) :: x,y,sig
+	REAL(SP), DIMENSION(:), INTENT(IN) :: x,y,sigx,sigy
 	REAL(SP), DIMENSION(:), INTENT(INOUT) :: a
 	REAL(SP), DIMENSION(:,:), INTENT(OUT) :: covar,alpha
 	REAL(SP), INTENT(OUT) :: chisq
@@ -25,7 +25,7 @@ SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
 	REAL(SP), SAVE :: ochisq
 	REAL(SP), DIMENSION(:), ALLOCATABLE, SAVE :: atry,beta
 	REAL(SP), DIMENSION(:,:), ALLOCATABLE, SAVE :: da
-	ndata=assert_eq(size(x),size(y),size(sig),'mrqmin: ndata')
+	ndata=assert_eq(size(x),size(y),size(sigx),'mrqmin: ndata')
 	ma=assert_eq((/size(a),size(maska),size(covar,1),size(covar,2),&
 		size(alpha,1),size(alpha,2)/),'mrqmin: ma')
 	mfit=count(maska)
@@ -70,14 +70,28 @@ SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
 	REAL(SP), DIMENSION(:,:), INTENT(OUT) :: alpha
 	INTEGER(I4B) :: j,k,l,m
 	REAL(SP), DIMENSION(size(x),size(a)) :: dyda
-	REAL(SP), DIMENSION(size(x)) :: dy,sig2i,wt,ymod
-    !print*, "hola, estoy en medio del mrqmin, antes del funcs",a
-	!print *,"antes del call", size(y),size(ymod),size(dy),size(x),ymod
-
+	REAL(SP), DIMENSION(size(x)) :: dy,sig2i,wt,ymod,derivadafuncion
+   
+   
 	call funcs(x,a,ymod,dyda)
+
+	derivadafuncion(1) = (ymod(2)-ymod(1))/(x(2)-x(1))
+	do k=2,size(x)-1
+	derivadafuncion(k) = (ymod(k+1)-ymod(k-1))/(x(k+1)-x(k-1))
+	end do
+	derivadafuncion(size(x)) = (ymod(size(x))-ymod(size(x)-1))/(x(size(x))-x(size(x)-1))
+
+	sig2i=1.0_sp/(sigy**2+(derivadafuncion*sigx)**2)
 	
-	sig2i=1.0_sp/(sig**2)
-	!print *,"despues del call" , size(y),size(ymod),size(dy),size(x)
+	do k=2,size(x)-1
+	!print*,derivadafuncion(k),ymod(k+1)-ymod(k-1),x(k+1)-x(k-1)
+		if(ymod(k+1)-ymod(k-1)==0.0 .or. x(k+1)-x(k-1)==0.0) then
+		sig2i(k) = sig2i(k-1)
+	!print*,"LO CAMBIO POR EL ANTERIOR:",sig2i(k)
+		end if
+	end do
+	!pause
+	
 	dy=y-ymod
 	
 	j=0

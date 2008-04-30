@@ -1608,16 +1608,18 @@ MODULE nr
 		END SUBROUTINE midinf
 	END INTERFACE
 	INTERFACE
-		SUBROUTINE midpnt(func,a,b,s,n)
+		SUBROUTINE midpnt(func,a,b,s,n,v,temp,epsilon)
 		USE nrtype
 		REAL(SP), INTENT(IN) :: a,b
 		REAL(SP), INTENT(INOUT) :: s
 		INTEGER(I4B), INTENT(IN) :: n
+		REAL(SP) :: v,temp,epsilon
 		INTERFACE
-			FUNCTION func(x)
+			FUNCTION func(x,v,temp,epsilon)
 			USE nrtype
 			REAL(SP), DIMENSION(:), INTENT(IN) :: x
 			REAL(SP), DIMENSION(size(x)) :: func
+			REAL(SP) :: v,temp,epsilon
 			END FUNCTION func
 		END INTERFACE
 		END SUBROUTINE midpnt
@@ -1797,9 +1799,9 @@ MODULE nr
 		END SUBROUTINE mrqcof
 	END INTERFACE
 	INTERFACE
-		SUBROUTINE mrqmin(x,y,sig,a,maska,covar,alpha,chisq,funcs,alamda)
+		SUBROUTINE mrqmin(x,y,sigx,sigy,a,maska,covar,alpha,chisq,funcs,alamda)
 		USE nrtype
-		REAL(SP), DIMENSION(:), INTENT(IN) :: x,y,sig
+		REAL(SP), DIMENSION(:), INTENT(IN) :: x,y,sigx,sigy
 		REAL(SP), DIMENSION(:), INTENT(INOUT) :: a
 		REAL(SP), DIMENSION(:,:), INTENT(OUT) :: covar,alpha
 		REAL(SP), INTENT(OUT) :: chisq
