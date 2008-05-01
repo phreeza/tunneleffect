@@ -55,9 +55,9 @@ alamda=-0.1	!The initial step of Levenberg-Marquardt needs two iterations and th
 
 do ii=1,50	!ITERATIONS
 	call mrqmin(v,i,sigv,sigi,a,maska,covar,alpha,chisq,bcs,alamda)
-	print*,"ITERATION:",ii,"PARAMETERS: EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE=",a(1),a(2),a(3),&
+	print*,"ITERATION NUM:",ii,"PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE:",a(1),a(2),a(3),&
 			& "CHI SQUARE=",chisq,"ALAMDA=",alamda
-	if(alamda > 100.0) exit
+	if(alamda > 100) exit
 end do
 
 !Para obtener los errores de los parametros hay que llamar a mrqmin con alamda=0
