@@ -1,5 +1,5 @@
 
-\documentclass[twocolumn,a4paper,10pt,twoside]{article}
+\documentclass[twocolumn, twoside,a4paper,10pt]{article}
 \pagestyle{plain}
 \addtolength{\textheight}{2cm}
 
@@ -21,7 +21,7 @@
 \begin{@twocolumnfalse} 
 \maketitle % need full-width title 
 \begin{abstract} 
-Tunnel effect between metal layers is analyzed here. A potential difference imposed between two metal layers creates an electron tunneling current, and its relation with the potential depends on the state of the layers. Here is presented the case when one of the metals, Lead, is in the superconducting state and the other, Aluminum, in the normal state. By analysis of the data the gap of the Lead and other consequences can be inferred.
+\small{Tunnel effect between metal layers is analyzed here. A potential difference imposed between two metal layers creates an electron tunneling current, and its relation with the potential depends on the state of the layers. Here is presented the case when one of the metals, Lead, is in the superconducting state and the other, Aluminum, in the normal state. By analysis of the data the gap of the Lead and other consequences can be inferred.}
 \vspace{1cm}
 \end{abstract}
 \end{@twocolumnfalse}
@@ -37,11 +37,49 @@ This is the Introduction This is the Introduction This is the Introduction This 
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------
 \section{Theoretical Approach}
-This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the 
+A LITTLE BIT OF MATHEMATICS FOR ELECTRON TUNNELING... FROM GIAEVER'S PAPER AND ANDRES' SOLID IV COURSE NOTES
 
-Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the 
+The transition rate $W$ for an electron from an occupied state in the layer 1 with momentum $\mathbf{p_1}$ to a free state in the layer 2 with momentum $\mathbf{p_2}$ can be calculated by means of the Fermi Golden Rule like follows:
+\begin{equation}\label{probability1}
+W_{1\to 2}^{1e} = \frac{2\pi}{\hbar} |T_{21}|^2 f(\epsilon_{\mathbf{p_1}}) [1-f(\epsilon_{\mathbf{p_2}})]
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}})\delta_{s_1s_2},
+\end{equation}
+where $T_{21}$ is the transition amplitud, $ f(\epsilon_{\mathbf{p_1}})$ the probability that the state $\mathbf{p_1}$ is occupied and  $[1-f(\epsilon_{\mathbf{p_2}})]$ the probability that the state $\mathbf{p_f}$ is empty, and the conservation of the energy and spin in the transition are assumed. 
 
-Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach This is the Theoretical Approach
+The total transition rate from the electrode 1 to the electrode 2 will be
+\begin{equation}\label{probability2}
+W_{1\to 2} = \frac{2\pi}{\hbar} \sum_{\substack{s_1,s_2\\ \mathbf{p_1},\mathbf{p_2}}} |T_{21}|^2 
+		f(\epsilon_{\mathbf{p_1}}) [1-f(\epsilon_{\mathbf{p_2}})] 
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}})\delta_{s_1s_2}.
+\end{equation}
+
+If the transition hamiltonian does not depend on the spin and couples weakly the electrodes when the applied voltage is small (a valid approximation for the voltages used in this experiment), we can simplify the expression \eqref{probability2}:
+\begin{equation}\label{probability3}
+W_{1\to 2} = \frac{4\pi}{\hbar} |T|^2 \sum_{\mathbf{p_1},\mathbf{p_2}}  
+		f(\epsilon_{\mathbf{p_1}}) [1-f(\epsilon_{\mathbf{p_2}})] 
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}}).
+\end{equation}
+The transition rate in the opposite way is analogous.
+
+Now we can write explicitly the expression for the current in the $1\to 2$ direction:
+\begin{equation}\label{current1}
+I = e\ (W_{1\to 2} - W_{2\to 1}),
+\end{equation}
+that is
+\begin{equation}\label{current2}
+I = \frac{4\pi e}{\hbar} |T|^2 \sum_{\mathbf{p_1},\mathbf{p_2}}  
+		[f(\epsilon_{\mathbf{p_1}})-f(\epsilon_{\mathbf{p_2}})] 
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}})..
+\end{equation}
+
+If we replace the summatories by integrals, considering that the momentums configure a quasicontinuum, and assuming a voltage difference $V$ between the electrodes that makes $\mu_2-\mu_1=eV$, we get
+\begin{eqnarray}\label{current3}
+I &=& \frac{4\pi e}{\hbar}  |T|^2 \times
+	\nonumber \\
+	&\times& \int_{-\infty}^{\infty} d\epsilon\ N_1(\epsilon-eV)\ N_2(\epsilon) [f(\epsilon-eV)-f(\epsilon)].
+	\nonumber \\
+\end{eqnarray}
+
 
 
 
@@ -90,9 +128,16 @@ These are the Experimental ResultsThese are the Experimental Results These are t
 
 \bibitem{bcs} J. Bardeen, L. N. Cooper and J. R. Schrieffer, \emph{Theory of Superconductivity}, Phys. Rev. vol. 108, Num. 5, p. 1175 (1957)
 
-\bibitem{bcs} N. W. Ashcroft and N. D. Mermin, \emph{Solid State Physics}, Harcourt College Publishers (1976)
+\bibitem{ashcroft} N. W. Ashcroft and N. D. Mermin, \emph{Solid State Physics}, Harcourt College Publishers (1976)
+
+\bibitem{formulas} Jianping Li, \emph{General explicit difference formulas for numerical differentiation}, Journal of Computational and Applied Mathematics vol. 183, p. 29 (2005)
+
+\bibitem{recipes} W. H. Press, S. A. Teukolsky, W. T. Vetterling and B. P. Flannery \emph{Numerical Recipes},  Cambridge University Press (1997)
+
+
 
 \end{thebibliography}
+
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------

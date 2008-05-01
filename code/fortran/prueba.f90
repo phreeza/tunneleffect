@@ -20,22 +20,22 @@ call getarg(1,file_name)
 
 open(unit=1,file=file_name,status="old",action="read",position="rewind")
    n=1
-   io=0
    do
+      read(unit=1,fmt=*,iostat=io) veff(n),ieff(n)	!Si io=0 es que ha leido algo
       if (io/=0) then
          exit
       end if
-      read(unit=1,fmt=*,iostat=io) veff(n),ieff(n)
-      !print*,veff(n),ieff(n)
 	  n=n+1
    end do
 close(unit=1,status="keep")
 
-allocate(i(n-2),v(n-2),sigv(n-2),sigi(n-2))
+n=n-1	!Porque la variable de conteo de un bucle de incrementa en uno al salir
+allocate(i(n),v(n),sigv(n),sigi(n))
 
-!Ahora escribimos un archivo llamado iv_experimental, para poder manejarlo bien
+!Ahora escribimos un archivo llamado iv_experimental, para poder manejarlo bien, porque necesitamos tener los
+!arrays completos, con la dimension adecuada y exacta
 open(unit=1,file="iv_experimental.txt",status="old",action="write",position="rewind")
-do ii=1, n-2
+do ii=1, n
 v(ii)=veff(ii)
 i(ii)=ieff(ii)
 write(unit=1,fmt=*) v(ii),i(ii)
@@ -45,9 +45,9 @@ close(unit=1,status="keep")
 sigi=1.0e-7 !Este es el error de las intensidades, debido a la inestabilidad de las medidas
 sigv=0.0001*v	!Este es el error del potencial, que depende de cada valor. Dato del aparato.
 
-a=(/0.00138,1.3508,0.005958/) !INITIAL PARAMETER VALUES FOR THE FIT
+a=(/0.001389,1.0,0.005958/) !INITIAL PARAMETER VALUES FOR THE FIT
 
-maska=(/.true.,.true.,.true./)	!The program fits the parameter with its covar value=true
+maska=(/.true.,.true.,.true./)	!The program fits the parameter with its maska value = true
 
 alamda=-0.1	!The initial step of Levenberg-Marquardt needs two iterations and this initial value of the alamda
 			!The fitting uses the gradient, but with the factor alambda
@@ -57,14 +57,15 @@ do ii=1,50	!ITERATIONS
 	call mrqmin(v,i,sigv,sigi,a,maska,covar,alpha,chisq,bcs,alamda)
 	print*,"ITERATION:",ii,"PARAMETERS: EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE=",a(1),a(2),a(3),&
 			& "CHI SQUARE=",chisq,"ALAMDA=",alamda
-	if(alamda > 1.0e7) exit
+	if(alamda > 100.0) exit
 end do
 
-!Para obtener los errores de los parametros, hay que llamar a mrqmin con alamda=0
-!Los errores seran los elementos de la diagonal de covar, que es la matriz de covarianza
+!Para obtener los errores de los parametros hay que llamar a mrqmin con alamda=0
+!Los errores seran las raices de los elementos de la diagonal de covar, que es la matriz de covarianza
 alamda=0.0
 call mrqmin(v,i,sigv,sigi,a,maska,covar,alpha,chisq,bcs,alamda)
-print*,"Epsilon, temperature and n-n conductance errors:",covar(1,1),covar(2,2),covar(3,3)
+print*,"Epsilon, temperature and n-n conductance errors:",&
+		& sqrt(covar(1,1)),sqrt(covar(2,2)),sqrt(covar(3,3))
 print*,"After. I have finished"
 !------------------
 end program prueba
