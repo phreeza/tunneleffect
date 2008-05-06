@@ -1,0 +1,19 @@
+These are the results by the moment (May, 5):
+
+* union_i4_He01_100uA_500puntos_1seg.txt
+ITERATION NUM: 7 PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE: 0.0011655198 3.1311677 0.0057998267 CHI SQUARE= 31245.44 ALAMDA= 10000.001
+Epsilon, temperature and n-n conductance errors: 0.0000015552204 0.03555077 3.6905678E-7
+
+* union_i4_He02_500uA_500puntos_1seg.txt
+It is easy to see, by mere inspection, that the data were taking at different temperatures, maybe with a Nitrogen recharge in the middle of the data collection process... If the fit were done with the half of the data, the right part with positive voltages, it will probably let different parameters...
+ITERATION NUM: 13 PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE: 0.0013890715 4.691664 0.005818809 CHI SQUARE= 813485.75 ALAMDA= 10000.001
+Epsilon, temperature and n-n conductance errors: 0.0000029537812 0.0636566 7.957706E-8
+
+*** union_i4_He02_500uA_500puntos_1seg_half.txt
+This is the fit with half the data of union 2.
+ITERATION NUM: 17 PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE: 0.0011336042 3.037088 0.005762267 CHI SQUARE= 5760.1343 ALAMDA= 10000.001
+Epsilon, temperature and n-n conductance errors: 0.0000042519478 0.10792642 1.09617964E-7
+
+* union_i4_He03_100uA_500puntos_1seg.txt
+ITERATION NUM: 21 PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE: 0.0012679953 1.7505311 0.005808946 CHI SQUARE= 42614.45 ALAMDA= 10000.001
+Epsilon, temperature and n-n conductance errors: 0.0000012254026 0.034133676 3.530664E-7
