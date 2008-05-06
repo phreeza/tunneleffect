@@ -18,7 +18,7 @@ END INTERFACE
 
 REAL(SP), DIMENSION(:,:), INTENT(OUT) :: didparam
 REAL(SP) :: c,epsilon,temp
-REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.003,hEpsilon=0.00001,hTemp=0.01
+REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.003,hEpsilon=0.00001,hTemp=0.00001
 INTEGER :: n,m,signo,l,puntos
 REAL(SP) :: ia,ib
 REAL(SP),DIMENSION(:) :: param

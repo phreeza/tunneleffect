@@ -20,7 +20,6 @@ open(unit=1,file=file_gv_theor,status="old",action="read",position="rewind")
       if (io/=0) then
          exit
       end if
-	  print*, v(n),g_theor(n)
 	  n=n+1
    end do
 close(unit=1,status="keep")
@@ -33,7 +32,6 @@ open(unit=1,file=file_gv_exper,status="old",action="read",position="rewind")
       if (io/=0) then
          exit
       end if
-	   print*, v(n),g_exper(n)
 	  n=n+1
    end do
 close(unit=1,status="keep")
