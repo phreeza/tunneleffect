@@ -132,7 +132,7 @@ It can be expressed in terms of the $C^{NN}$ like follows:
 I^{NS} = \frac{C^{NN}}{e} \int_{-\infty}^{\infty} dE\ \frac{|E|}{\sqrt{E^2-\Delta^2}} [f(E-eV)-f(E)].
 \end{equation}
 
-Finally, introducing $x=E-\epsilon$ and noting that Fermi functions are even, we get the expression that is used for numerical analysis:
+Finally, introducing $x=E-\epsilon$ (with $\epsilon$ now the gap) and noting that Fermi functions are even, we get the expression that is used for numerical analysis:
 \begin{eqnarray}\label{ins_numerical}
 I^{NS} &=& \frac{C^{NN}}{e} \int_{0}^{\infty} dx\ \frac{x+\epsilon}{\sqrt{x(x+2\epsilon)}} \times
 		\nonumber \\
@@ -154,9 +154,8 @@ C^{NS} &=& \frac{1}{R^{NS}} = \frac{dI^{NS}}{dV} =
 By analogy with the previous section, we write directly the expression of the current for this situation:
 \begin{equation}\label{ins}
 I^{SS} = \frac{C^{NN}}{e} \int_{-\infty}^{\infty} dE\ 
-		\frac{E^2\ [f(E-eV)-f(E)]}{\sqrt{E^2-\Delta_1^2}\sqrt{E^2-\Delta_2^2}}.
+		\frac{E^2\ [f(E-eV)-f(E)]}{\sqrt{(E^2-\epsilon_1^2)}\sqrt{(E^2-\epsilon_2^2)}}.
 \end{equation}
-
 
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------

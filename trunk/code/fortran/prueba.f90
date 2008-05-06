@@ -11,7 +11,7 @@ REAL(SP) :: chisq
 REAL(SP) :: alamda
 LOGICAL(LGT), DIMENSION(3) :: maska
 INTEGER :: io,n,ii
-CHARACTER(LEN=40) :: file_name
+CHARACTER(LEN=60) :: file_name
 
 call getarg(1,file_name)
 !getarg(pos,name) Sets name to the pos-th command-line argument 	
@@ -45,7 +45,7 @@ close(unit=1,status="keep")
 sigi=1.0e-7 !Este es el error de las intensidades, debido a la inestabilidad de las medidas
 sigv=0.0001*v	!Este es el error del potencial, que depende de cada valor. Dato del aparato.
 
-a=(/0.001389,1.0,0.005958/) !INITIAL PARAMETER VALUES FOR THE FIT
+a=(/0.0011655198,3.1311677,0.0057998267/) !INITIAL PARAMETER VALUES FOR THE FIT
 
 maska=(/.true.,.true.,.true./)	!The program fits the parameter with its maska value = true
 
@@ -57,7 +57,7 @@ do ii=1,50	!ITERATIONS
 	call mrqmin(v,i,sigv,sigi,a,maska,covar,alpha,chisq,bcs,alamda)
 	print*,"ITERATION NUM:",ii,"PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE:",a(1),a(2),a(3),&
 			& "CHI SQUARE=",chisq,"ALAMDA=",alamda
-	if(alamda > 100) exit
+	if(alamda > 10000) exit
 end do
 
 !Para obtener los errores de los parametros hay que llamar a mrqmin con alamda=0
