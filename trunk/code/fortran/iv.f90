@@ -13,31 +13,31 @@ END FUNCTION integrand
 END INTERFACE
 
 REAL(SP) :: c,v,epsilon,temp
-REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.1
+REAL(SP),PARAMETER :: e=1.602176487E-19,k=8.617343E-5,vmax=0.03
 INTEGER :: n,m,signo,l,puntos
 REAL(SP) :: i,ia,ib
 
 
-epsilon = 0.002
-temp = 5.0
-c = 0.01
+epsilon = 0.0011336042
+temp = 3.037088
+c = 0.005762267
 
 
 open(unit=1,file="iv_teorico.txt",status="replace",action="write",position="rewind")
-puntos=200
+puntos=1000
 
+ia=1.0e-4
+ib=vmax+2*epsilon !Porque se ve que a partir de ese valor la funcion es asintoticamente nula
 do n=-puntos,puntos
 v=real(n)/puntos*vmax
-i=0.0
    ia=1e-4
    ib=vmax + 2*epsilon
-   i = i + qromo(integrand,ia,ib,midpnt,v,temp,epsilon) &
+   i = qromo(integrand,ia,ib,midpnt,v,temp,epsilon) &
 		& + sqrt(ia*(2*epsilon+ia))*(1/(1+exp((epsilon-v)/(k*temp)))-1/(1+exp((epsilon+v)/(k*temp))))
-	print*,n,i,v
+	i = i*c
 	write(unit=1,fmt=*) v,i
 end do
    
-i = i*c
 close(unit=1,status="keep")
 
 !-------------------

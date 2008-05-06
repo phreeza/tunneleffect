@@ -45,7 +45,7 @@ close(unit=1,status="keep")
 sigi=1.0e-7 !Este es el error de las intensidades, debido a la inestabilidad de las medidas
 sigv=0.0001*v	!Este es el error del potencial, que depende de cada valor. Dato del aparato.
 
-a=(/0.0011655198,3.1311677,0.0057998267/) !INITIAL PARAMETER VALUES FOR THE FIT
+a=(/0.001,1.0,0.005/) !INITIAL PARAMETER VALUES FOR THE FIT
 
 maska=(/.true.,.true.,.true./)	!The program fits the parameter with its maska value = true
 
