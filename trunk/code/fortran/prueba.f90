@@ -45,15 +45,15 @@ close(unit=1,status="keep")
 sigi=1.0e-7 !Este es el error de las intensidades, debido a la inestabilidad de las medidas
 sigv=0.0001*v	!Este es el error del potencial, que depende de cada valor. Dato del aparato.
 
-a=(/0.001,1.0,0.005/) !INITIAL PARAMETER VALUES FOR THE FIT
+a=(/0.0013,4.2,0.0058/) !INITIAL PARAMETER VALUES FOR THE FIT
 
-maska=(/.true.,.true.,.true./)	!The program fits the parameter with its maska value = true
+maska=(/.true.,.false.,.false./)	!The program fits the parameter with its maska value = true
 
-alamda=-0.1	!The initial step of Levenberg-Marquardt needs two iterations and this initial value of the alamda
+alamda=-1.0	!The initial step of Levenberg-Marquardt needs two iterations and this initial value of the alamda
 			!The fitting uses the gradient, but with the factor alambda
 
 
-do ii=1,50	!ITERATIONS
+do ii=1,1	!ITERATIONS
 	call mrqmin(v,i,sigv,sigi,a,maska,covar,alpha,chisq,bcs,alamda)
 	print*,"ITERATION NUM:",ii,"PARAMETERS EPSILON, TEMPERATURE AND NORMAL-NORMAL CONDUCTANCE:",a(1),a(2),a(3),&
 			& "CHI SQUARE=",chisq,"ALAMDA=",alamda

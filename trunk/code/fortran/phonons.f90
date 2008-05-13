@@ -39,7 +39,7 @@ close(unit=1,status="keep")
 n=n-1 !because it gets out the loop with an increment of 1
 open(unit=1,file="phonons.txt",status="replace",action="write",position="rewind")
         do l=1,n
-                write(unit=1,fmt=*) v(l),abs(g_theor(l)-g_exper(l))
+                write(unit=1,fmt=*) v(l),g_theor(l)-g_exper(l)
         end do
 close(unit=1,status="keep")
 
