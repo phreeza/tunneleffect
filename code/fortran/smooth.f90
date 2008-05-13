@@ -38,7 +38,7 @@ dim=dim-1	! Porque al salir del bucle la variable de conteo se incrementa en uno
 
 sigma = 1.0e-7
 
-n=1		!Puntos que toma a cada lado para hacer la derivada por regresion, que son 2n+1
+n=3		!Puntos que toma a cada lado para hacer la derivada por regresion, que son 2n+1
 s=(2*n+1)/sigma	!Lo escribo asi porque es la misma sigma para todos
 
 do k=1,dim
