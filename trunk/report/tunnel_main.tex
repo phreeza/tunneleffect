@@ -37,8 +37,6 @@ This is the Introduction This is the Introduction This is the Introduction This 
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------
 \section{Theoretical Approach}
-A LITTLE BIT OF MATHEMATICS FOR ELECTRON TUNNELING... FROM GIAEVER'S PAPER AND ANDRES' SOLID IV COURSE NOTES
-
 The transition rate $W$ for an electron from an occupied state in the layer 1 with momentum $\mathbf{p_1}$ to a free state in the layer 2 with momentum $\mathbf{p_2}$ can be calculated by means of the Fermi Golden Rule like follows:
 \begin{equation}\label{probability1}
 W_{1\to 2}^{1e} = \frac{2\pi}{\hbar} |T_{21}|^2 f(\epsilon_{\mathbf{p_1}}) [1-f(\epsilon_{\mathbf{p_2}})]
@@ -85,7 +83,7 @@ Now three cases can be distinguished, that is, when both electrodes are metals i
 
 %-----------------------------------------------------------------
 \subsection{Normal-Normal junction}
-For a sufficient small voltage $V$, the state densities can be considered nearly constant, equation \eqref{current3} reads
+For a sufficient small voltage $V$, the state densities can be considered nearly constant, and equation \eqref{current3} reads
 \begin{equation}\label{inn}
 I^{NN} = \frac{4\pi e}{\hbar} |T|^2 N_1(\mu)N_2(\mu) eV,
 \end{equation}
@@ -105,15 +103,17 @@ N_N(\epsilon) d\epsilon = N_S(E)dE.
 \end{equation}
 
 The relation between $\epsilon$ and $E$ in the range of the BCS Theory of Superconductivity is $E_{\mathbf{p}} = \sqrt{\epsilon_{\mathbf{p}}^2 + \Delta^2}$, with $\Delta$ the gap of the superconductor. So we can get
-\begin{equation}\label{ns}
-N_S(E) = N_N(\epsilon) \left | \frac{d\epsilon}{dE} \right | =  
-\left\{ 
+\begin{eqnarray}\label{ns}
+&&N_S(E) = N_N(\epsilon) \left | \frac{d\epsilon}{dE} \right | = 
+	\nonumber \\
+&& = \left\{ 
 \begin{array}{ll} 
 N_N(\epsilon)\frac{|E|}{\sqrt{E^2-\Delta^2}},	&	|E| > \Delta 	\\ 
 0,								& 	|E| \geq \Delta	\\
 \end{array}
 \right..
-\end{equation}
+	\nonumber \\
+\end{eqnarray}
 
 If we replace this state density in \eqref{current3} we get the $I^{NS}$, but only up to $|T|^2$ order. There are high order effects by means of Cooper pair transmission to the superconducting electrode. Neglecting these issues, the current for small voltages is
 \begin{eqnarray}\label{ins_previous}
@@ -132,11 +132,11 @@ It can be expressed in terms of the $C^{NN}$ like follows:
 I^{NS} = \frac{C^{NN}}{e} \int_{-\infty}^{\infty} dE\ \frac{|E|}{\sqrt{E^2-\Delta^2}} [f(E-eV)-f(E)].
 \end{equation}
 
-Finally, introducing $x=E-\epsilon$ (with $\epsilon$ now the gap) and noting that Fermi functions are even, we get the expression that is used for numerical analysis:
+Finally, introducing $x=E-\Delta$ and noting that Fermi functions are even, we get the expression that is used for numerical analysis:
 \begin{eqnarray}\label{ins_numerical}
-I^{NS} &=& \frac{C^{NN}}{e} \int_{0}^{\infty} dx\ \frac{x+\epsilon}{\sqrt{x(x+2\epsilon)}} \times
+I^{NS} &=& \frac{C^{NN}}{e} \int_{0}^{\infty} dx\ \frac{x+\Delta}{\sqrt{x(x+2 \Delta)}} \times
 		\nonumber \\
-		&\times& [f(x+\epsilon-eV)-f(x+\epsilon+eV)].
+		&\times& [f(x+ \Delta-eV)-f(x+ \Delta +eV)].
 		\nonumber \\
 \end{eqnarray}
 
@@ -154,21 +154,65 @@ C^{NS} &=& \frac{1}{R^{NS}} = \frac{dI^{NS}}{dV} =
 By analogy with the previous section, we write directly the expression of the current for this situation:
 \begin{equation}\label{ins}
 I^{SS} = \frac{C^{NN}}{e} \int_{-\infty}^{\infty} dE\ 
-		\frac{E^2\ [f(E-eV)-f(E)]}{\sqrt{(E^2-\epsilon_1^2)}\sqrt{(E^2-\epsilon_2^2)}}.
+		\frac{E^2\ [f(E-eV)-f(E)]}{\sqrt{(E^2-\Delta_1 ^2)}\sqrt{(E^2-\Delta_2 ^2)}}.
 \end{equation}
 
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------
 \section{Experimental Method}
-This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the 
+In order to measure the effect described above in the case of normal-superconductor tunneling, we prepare samples of two metals with different transition temperatures separated by an insulator. We vapor-deposited thin layers of aluminum and lead on a microscope glass slide,  leaving the Aluminum layer at the open air for a short period to let some insulating $AlO_2$ oxide form.
 
-Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the Experimental Method This is the 
+IT HAS TO BE CLEAR THAT WE HAVE A SANDWITCH!!!!!!!
+
+1) sample preparation: vacuum chamber (torr?? why?? mean free path), filament, layer thickness (method for calculating it: isotropy or resistance? Justify that the second one gives smaller thickness with Poisson distribution, because we have rare events), ... HOW MUCH/MANY?????!!!!!!!!!!!!!!
+
+2) Cryostat, nitrogen, helium, vacuum pump, manometer, T-P of vapor-pressure He, why don't we have different P's up and down in the cryostat? The T is different... And... HOW MUCH???
+
+3) Measurement: 4 terminals (why? HOW MUCH?), constant steps sized intensity, 
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{graph1}
+\caption{Hola\label{graph1}}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{graph2}
+\caption{Hola\label{graph2}}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{graph3}
+\caption{Hola\label{graph3}}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{graph4}
+\caption{Hola\label{graph4}}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=0.4]{graph5}
+\caption{Hola\label{graph5}}
+\end{figure}
+
+
 
 %-----------------------------------------------------------------
 %-----------------------------------------------------------------
-\section{Experimental Results}
-These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results  
- 
+\section{Results and Analysis}
+
+1) Levenberg-Marquard??? The best method: by hand... :-)
+2) Graphs: commentary on ALL the characteristics...
+3) BCS is not totally correct --> real density of states is not the BCS's one, phonons,
+4) ...
+
+
 These are the Experimental ResultsThese are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results These are the Experimental Results 
 
 
