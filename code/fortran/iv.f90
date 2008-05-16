@@ -23,9 +23,9 @@ CHARACTER(LEN=50) :: file_name
 call getarg(1,file_name)	
 !Hay que escribir en el shell "iv epsilofile_name"
 
-epsilon	= 0.0013 
-temp	= 4.2
-c		= 0.0058
+epsilon	= 0.0014
+temp	= 1.45
+c		= 0.0057
 open(unit=1,file=file_name,status="old",action="read",position="rewind")
    dim=1
    !La variable io es cero solo si lee algo. Asi hacemos un bucle de numero de terminos desconocido
@@ -42,7 +42,7 @@ dim=dim-1
 
 open(unit=1,file="iv_teorico.txt",status="replace",action="write",position="rewind")
 
-ia=1.0e-4
+ia=1.0e-5
 ib=maxval(abs(v))+2*epsilon !Porque se ve que a partir de ese valor la funcion es asintoticamente nula
 do n=1,dim
 	i(n) = qromo(integrand,ia,ib,midpnt,v(n),temp,epsilon) &

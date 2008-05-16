@@ -18,7 +18,7 @@ call getarg(2,file_name_deriv)
 !call getarg(3,n)	
 
 ! Hay que escribir en el shell: 
-! derivada 'nombre fichero input' 'nombre fichero output' 'numero de puntos que toma' y ejecuta solito todo
+! derivada 'nombre fichero input' 'nombre fichero output' y ejecuta solito todo
 
 !--------------------------------------------
 !Vamos a leer los datos del archivo, V-I
@@ -38,7 +38,7 @@ dim=dim-1	! Porque al salir del bucle la variable de conteo se incrementa en uno
 
 sigma = 1.0e-7
 
-n=3		!Puntos que toma a cada lado para hacer la derivada por regresion, que son 2n+1
+n=7		!Puntos que toma a cada lado para hacer la derivada por regresion, que son 2n+1
 s=(2*n+1)/sigma	!Lo escribo asi porque es la misma sigma para todos
 
 do k=1,dim
@@ -62,9 +62,6 @@ do k=1,dim
 	delta = s*sxx - sx**2
 	di(k) = (s*sxy-sx*sy)/delta
    end if
-!print*,s,sx,sy,sxx,sxy,delta
-!print*,k,di(k)
-!pause
 end do
 open(unit=1,file=file_name_deriv,status="replace",action="write",position="rewind")
         do l=1,dim
