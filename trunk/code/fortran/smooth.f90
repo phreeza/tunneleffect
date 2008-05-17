@@ -38,7 +38,7 @@ dim=dim-1	! Porque al salir del bucle la variable de conteo se incrementa en uno
 
 sigma = 1.0e-7
 
-n=1		!Puntos que toma a cada lado para hacer la derivada por regresion, que son 2n+1
+n=7		!Puntos que toma a cada lado para hacer la derivada por regresion, que son 2n+1
 s=(2*n+1)/sigma	!Lo escribo asi porque es la misma sigma para todos
 
 do k=1,dim
@@ -65,7 +65,7 @@ do k=1,dim
 end do
 open(unit=1,file=file_name_deriv,status="replace",action="write",position="rewind")
         do l=1,dim
-                write(unit=1,fmt=*) v(l),di(l)
+                write(unit=1,fmt=*) v(l),di(l)/0.0057
         end do
 close(unit=1,status="keep")
 

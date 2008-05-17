@@ -43,7 +43,7 @@ di(n) = (i(n)-i(n-1)) / ((v(n)-v(n-1)))	! Utilizo para el ultimo la formula back
 
 open(unit=1,file=file_name_deriv,status="replace",action="write",position="rewind")
         do l=1,n
-                write(unit=1,fmt=*) v(l),di(l)
+                write(unit=1,fmt=*) v(l),di(l)/0.006
         end do
 close(unit=1,status="keep")
 
