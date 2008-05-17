@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.4.11)  17 MAY 2008 10:34
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.4.11)  17 MAY 2008 13:43
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -131,7 +131,11 @@ File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(./tunnel_main.aux)
+(./tunnel_main.aux
+
+LaTeX Warning: Label `ins' multiply defined.
+
+)
 \openout1 = `tunnel_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -146,8 +150,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
-
-(/usr/local/texlive/2007/texmf-dist/tex/context/base/supp-pdf.tex
+ (/usr/local/texlive/2007/texmf-dist/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
 \scratchdimen=\dimen114
@@ -190,9 +193,6 @@ L/cmm/m/it/10 ^^O[] \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 ^^O[]\OT1/cmr/m/n/10
 )\OML/cmm/m/it/10 ^^N[]:
  []
 
-
-LaTeX Warning: Reference `probability2' on page 1 undefined on input line 55.
-
 [1{/usr/local/texlive/2007/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -202,15 +202,9 @@ Overfull \hbox (1.07642pt too wide) in alignment at lines 75--80
  []
 
 
-LaTeX Warning: Reference `current3' on page 2 undefined on input line 87.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 100--100
 []\OT1/cmr/bx/n/12 Normal-Superconductor junc-
  []
-
-
-LaTeX Warning: Reference `current3' on page 2 undefined on input line 119.
 
 
 Overfull \hbox (2.55695pt too wide) detected at line 134
@@ -225,10 +219,92 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--154
 []\OT1/cmr/bx/n/12 Superconductor-
  []
 
-[2] (./expmeth.tex) (./resana.tex <graph1.jpg, id=25, 542.025pt x 542.025pt>
-File: graph1.jpg Graphic file (type jpg)
+[2] (./expmeth.tex
+Underfull \hbox (badness 1824) in paragraph at lines 3--4
+\OT1/cmr/m/n/10 Our aim in this ex-per-i-ment was to mea-sure
+ []
 
-<use graph1.jpg>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--4
+
+ []
+
+
+LaTeX Warning: Reference `giaever1' on page 3 undefined on input line 6.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+
+Underfull \hbox (badness 1184) in paragraph at lines 14--15
+\OT1/cmr/m/n/10 a change in be-hav-ior. Sec-ondly the vac-uum
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+
+ []
+
+
+Underfull \hbox (badness 1577) in paragraph at lines 23--24
+[]\OT1/cmr/m/n/10 The tun-nel junc-tion was con-nected in a 4
+ []
+
+
+Underfull \hbox (badness 1960) in paragraph at lines 23--24
+\OT1/cmr/m/n/10 ter-mi-nal con-fig-u-ra-tion, i.e. the volt-age and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 27--28
+[]\OT1/cmr/m/n/10 The res-o-lu-tion of volt-age mea-sure-ments de-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
+ []
+
+) (./resana.tex <graph1.jpg, id=25, 542.025pt x 542.025pt>
+File: graph1.jpg Graphic file (type jpg)
+ <use graph1.jpg>
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -268,24 +344,26 @@ Overfull \hbox (3.43452pt too wide) in paragraph at lines 29--30
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [3 <./graph1.jpg> <./graph2.jpg>]
+) [3] [4 <./graph1.jpg> <./graph2.jpg> <./graph3.pdf> <./graph4.jpg>]
 Underfull \hbox (badness 2608) in paragraph at lines 188--189
 \OT1/cmr/m/it/10 Mea-sure-ments on Su-per-im-posed Lay-ers of
  []
 
-[4 <./graph3.pdf> <./graph4.jpg> <./graph5.jpg>] (./tunnel_main.aux)
+[5
+
+ <./graph5.jpg>] (./tunnel_main.aux)
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1696 strings out of 94073
- 20651 string characters out of 1162984
- 78321 words of memory out of 1500000
- 4970 multiletter control sequences out of 10000+50000
+ 1697 strings out of 94073
+ 20661 string characters out of 1162984
+ 78533 words of memory out of 1500000
+ 4971 multiletter control sequences out of 10000+50000
  13736 words of font info for 52 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
  27i,13n,22p,767b,304s stack positions out of 5000i,500n,6000p,200000b,5000s
@@ -305,9 +383,9 @@ bluesky/cm/cmsy10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/c
 m/cmsy7.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmti10.p
 fb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmti9.pfb></usr/l
 ocal/texlive/2007/texmf-dist/fonts/type1/bluesky/ams/msbm10.pfb>
-Output written on tunnel_main.pdf (4 pages, 1240097 bytes).
+Output written on tunnel_main.pdf (5 pages, 1245548 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
+ 104 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
