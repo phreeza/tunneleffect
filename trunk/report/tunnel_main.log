@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2007.11.14)  19 MAY 2008 18:51
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2008.4.11)  20 MAY 2008 00:57
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -349,13 +349,70 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <conductance2.pdf, id=58, 849.1725pt x 596.2275pt>
 File: conductance2.pdf Graphic file (type pdf)
  <use conductance2.pdf>
+
+LaTeX Warning: Reference `inegral' on page 4 undefined on input line 58.
+
+
+Underfull \hbox (badness 1231) in paragraph at lines 56--59
+\OT1/cmr/m/n/10 in-te-gral in 2 parts. The high en-er-gies were
+ []
+
+
+Underfull \hbox (badness 1688) in paragraph at lines 56--59
+\OT1/cmr/m/n/10 es-ti-mated an-a-lyt-i-cally. It was as-sumed that
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 56--59
+\OT1/cmr/m/n/10 in-te-grate for all $\OML/cmm/m/it/10 x$\OT1/cmr/m/n/10 . The r
+e-sult-ing curve was
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+
+ []
+
 [4 <./gv_3-4-5-7.pdf> <./gv_theo_exp_7.pdf> <./gv_theo_exp_10.pdf> <./gv_theore
-tical_4-5-10.pdf> <./iv_theoretical_4-5-10.pdf>])
+tical_4-5-10.pdf> <./iv_theoretical_4-5-10.pdf>]
+Underfull \hbox (badness 1701) in paragraph at lines 61--62
+\OML/cmm/m/it/10 C[]$ \OT1/cmr/m/n/10 it quickly be-comes ap-par-ent that there
+
+ []
+
+
+Underfull \hbox (badness 1383) in paragraph at lines 61--62
+\OT1/cmr/m/n/10 are cer-tain qual-i-ta-tive dif-fer-ences be-tween the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 64--65
+\OT1/cmr/m/n/10 a-ture(see GRAPH REF) in the range of our
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+
+ []
+
+[5 <./residual.pdf> <./bcs_gap2.pdf> <./conductance2.pdf>])
 Underfull \hbox (badness 2608) in paragraph at lines 69--70
 \OT1/cmr/m/it/10 Mea-sure-ments on Su-per-im-posed Lay-ers of
  []
 
-[5 <./residual.pdf> <./bcs_gap2.pdf> <./conductance2.pdf>] (./tunnel_main.aux)
+[6
+
+] (./tunnel_main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -364,13 +421,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1742 strings out of 94073
- 21529 string characters out of 1162983
+ 1743 strings out of 94073
+ 21538 string characters out of 1162984
  77566 words of memory out of 1500000
- 5001 multiletter control sequences out of 10000+50000
+ 5002 multiletter control sequences out of 10000+50000
  14991 words of font info for 57 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 27i,13n,22p,703b,304s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 27i,13n,22p,857b,304s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx10.pfb></usr/l
 ocal/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pfb></usr/local/texl
 ive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx5.pfb></usr/local/texlive/2007/t
@@ -389,9 +446,9 @@ b></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy9.pfb></usr/lo
 cal/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texli
 ve/2007/texmf-dist/fonts/type1/bluesky/cm/cmti9.pfb></usr/local/texlive/2007/te
 xmf-dist/fonts/type1/bluesky/ams/msbm10.pfb>
-Output written on tunnel_main.pdf (5 pages, 594082 bytes).
+Output written on tunnel_main.pdf (6 pages, 598200 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
+ 174 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
