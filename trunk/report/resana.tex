@@ -51,45 +51,48 @@
 
 
 
-\subsection{Energy gap}
 
-0.- Graphing method: smoothing (same order for theo and exp), derivation method (linear least squares, g is the slope...). Smoothig looses information...
+%0.- Graphing method: smoothing (same order for theo and exp), derivation method (linear least squares, g is the slope...). Smoothig looses information...
+Our first step in analyzing the data collected was to plot it. Since the shape of the energy spectrum is given by the derivative of the I-V curve, it was necessary to numerically calculate the derivative. The method we chose to do this was to fit a linear function to $n$ neighboring data points using a straightforward least squares approach. The slope of the fitted function was taken as the derivative.This had the additional benefit of performing some smoothing. Of course there is some information lost in the process, but this was not deemed critical as the number of points collected was generally much larger than $n$.\\
+%Generation of theoretical Data
+In order to estimate the energy gap of our Pb sample it was necessary to evaluate the integral in \ref{inegral}, and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm (quote), while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \aprox \const$ for small $x$, as it is finite and nonzero for $x=0$, while the second part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$ diverges for $x\to0$. It can, however be integrated analytically up to $0$, (FORMULA?) thus enabling us to efficiently integrate for all $x$. The resulting curve was derivated in the same manner as the experimental data, to ensure their comparability.\\
 
-1.- BCS does not fully describe the measured data. The density of states is different... --> Residual
+%1.- BCS does not fully describe the measured data. The density of states is different... --> Residual
+When plotting the derivatives in this way and comparing them qualitatively to each other for some arbitrary but reasonable values of $T$,$\Delta$ and $C_{NN}$ it quickly becomes apparent that there are certain qualitative differences between the experimental results and the results predicted by the BCS theory. Specifically, there are some bulges in the conductance curves outside the gap in the experimental data which are not present in the theory. GRAPH REFERENCE\\
 
-2.- Might be electron-phonon scattering.
+%2.- Might be electron-phonon scattering.
 
-3.- Fitting by generic least squares algorithm cannot be correct.
+%3.- Fitting by generic least squares algorithm cannot be correct.
 
-4.- The best way: by hand. how? 
-	1st : conductance by room temperature and nitrogen temperature data measurements (figure)
-	2nd : T by helium vapor pressure --> manometer¿?¿? error??? 
-	3rd : T and gap. The gap is the same for all T's because our range is small (figure). We give a sufficient large error for it (subjective...)
-	4th : The temperatures are consistent
+%4.- The best way: by hand. how? 
+%	1st : conductance by room temperature and nitrogen temperature data measurements (figure)
+%	2nd : T by helium vapor pressure --> manometer¿?¿? error??? 
+%	3rd : T and gap. The gap is the same for all T's because our range is small (figure). We give a sufficient large error for it (subjective...)
+%	4th : The temperatures are consistent
 
-------------------
+%------------------
 
-5.- Last measurement gives qualitatively different results... Possible explanation: normal-super and super-super junctions in parallel. Tc is different for films, greater than bulk Tc...
+%5.- Last measurement gives qualitatively different results... Possible explanation: normal-super and super-super junctions in parallel. Tc is different for films, greater than bulk Tc...
 
+%
 
+%We have measured the lead's energy gap as $(1.4 \pm 0.1)meV$ below $4.2K$. The BCS theory predicts a temperature dependance, nevertheless in the range we have measured it, i.e. below the helium vaporization and above the Aluminum critical temperatures, this variation is less than the experimental error. This can be seen in fig.\ref{bcs_gap}.
 
-We have measured the lead's energy gap as $(1.4 \pm 0.1)meV$ below $4.2K$. The BCS theory predicts a temperature dependance, nevertheless in the range we have measured it, i.e. below the helium vaporization and above the Aluminum critical temperatures, this variation is less than the experimental error. This can be seen in fig.\ref{bcs_gap}.
+%The data almost agree with BCS theory. In fig.\ref{iv_theo_exp} can be seen the I-V curve, which is modified near the gap when the temperature is below the $T_c$. The experimental and theoretical data are difficult to distinguish. 
 
-The data almost agree with BCS theory. In fig.\ref{iv_theo_exp} can be seen the I-V curve, which is modified near the gap when the temperature is below the $T_c$. The experimental and theoretical data are difficult to distinguish. 
+%However, 
 
-However, 
+%
 
+%1) Symmetric?
 
+%2) Al a little bit superconducting
 
-1) Symmetric?
+%3) Phonons
 
-2) Al a little bit superconducting
+%4)  How have been made the graphs... smoothing... effects below the smoothing cannot be considered.
 
-3) Phonons
-
-4)  How have been made the graphs... smoothing... effects below the smoothing cannot be considered.
-
-5) Tc for films is greater than the bulk Tc's... So at 1.2K is possible that some parts of the Al film are superconductors. In this case, we have normal-super and super-super junctions added in parallel.
+%5) Tc for films is greater than the bulk Tc's... So at 1.2K is possible that some parts of the Al film are superconductors. In this case, we have normal-super and super-super junctions added in parallel.
 
 
 
