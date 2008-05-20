@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2007.11.14)  20 MAY 2008 01:21
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2007.11.14)  20 MAY 2008 02:59
 entering extended mode
 \write18 enabled.
  %&-line parsing enabled.
@@ -131,51 +131,51 @@ File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-(./tunnel_main.aux
+(./ed.sty
+Package: ed 2007/10/03 v1.3 Editorial Notes
+\c@ednote=\count100
+) (./tunnel_main.aux
 
 LaTeX Warning: Label `ins' multiply defined.
-
-
-LaTeX Warning: Label `graph5' multiply defined.
 
 )
 \openout1 = `tunnel_main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
  (/usr/local/texlive/2007/texmf-dist/tex/context/base/supp-pdf.tex
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count100
+\scratchcounter=\count101
 \scratchdimen=\dimen114
 \scratchbox=\box28
-\nofMPsegments=\count101
-\nofMParguments=\count102
-\MPscratchCnt=\count103
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\MPscratchCnt=\count104
 \MPscratchDim=\dimen115
-\MPnumerator=\count104
+\MPnumerator=\count105
 \everyMPtoPDFconversion=\toks26
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 29.
+LaTeX Font Info:    Try loading font information for U+msa on input line 31.
  (/usr/local/texlive/2007/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 29.
+LaTeX Font Info:    Try loading font information for U+msb on input line 31.
 
 (/usr/local/texlive/2007/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
 (./introduction.tex)
-Underfull \hbox (badness 1616) in paragraph at lines 4--36
+Underfull \hbox (badness 1616) in paragraph at lines 4--38
 \OT1/cmr/m/n/10 The the-ory of su-per-con-duc-tiv-ity pre-sented by
  []
 
@@ -307,112 +307,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--42
 
  []
 
-) (./resana.tex <gv_3-4-5-7.pdf, id=51, 849.1725pt x 596.2275pt>
-File: gv_3-4-5-7.pdf Graphic file (type pdf)
-
-<use gv_3-4-5-7.pdf> <gv_theo_exp_7.pdf, id=52, 849.1725pt x 596.2275pt>
-File: gv_theo_exp_7.pdf Graphic file (type pdf)
-
-<use gv_theo_exp_7.pdf> <gv_theo_exp_10.pdf, id=53, 849.1725pt x 596.2275pt>
-File: gv_theo_exp_10.pdf Graphic file (type pdf)
-
-<use gv_theo_exp_10.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<gv_theoretical_4-5-10.pdf, id=54, 849.1725pt x 596.2275pt>
+) (./resana.tex <gv_theoretical_4-5-10.pdf, id=51, 849.1725pt x 596.2275pt>
 File: gv_theoretical_4-5-10.pdf Graphic file (type pdf)
 
 <use gv_theoretical_4-5-10.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<iv_theoretical_4-5-10.pdf, id=55, 849.1725pt x 596.2275pt>
+<iv_theoretical_4-5-10.pdf, id=52, 849.1725pt x 596.2275pt>
 File: iv_theoretical_4-5-10.pdf Graphic file (type pdf)
 
-<use iv_theoretical_4-5-10.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<residual.pdf, id=56, 849.1725pt x 596.2275pt>
-File: residual.pdf Graphic file (type pdf)
- <use residual.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<bcs_gap2.pdf, id=57, 302.12875pt x 311.1625pt>
-File: bcs_gap2.pdf Graphic file (type pdf)
- <use bcs_gap2.pdf>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<conductance2.pdf, id=58, 849.1725pt x 596.2275pt>
-File: conductance2.pdf Graphic file (type pdf)
- <use conductance2.pdf>
-
-LaTeX Warning: Reference `inegral' on page 4 undefined on input line 58.
-
-
-Underfull \hbox (badness 1231) in paragraph at lines 56--59
-\OT1/cmr/m/n/10 in-te-gral in 2 parts. The high en-er-gies were
+<use iv_theoretical_4-5-10.pdf> EdNote! EdNote!
+Underfull \hbox (badness 1292) in paragraph at lines 19--22
+\OT1/cmr/m/n/10 while the sec-ond part, $[]$ di-verges for
  []
 
 
-Underfull \hbox (badness 1688) in paragraph at lines 56--59
-\OT1/cmr/m/n/10 es-ti-mated an-a-lyt-i-cally. It was as-sumed that
- []
-
-
-Underfull \hbox (badness 1019) in paragraph at lines 56--59
-\OT1/cmr/m/n/10 in-te-grate for all $\OML/cmm/m/it/10 x$\OT1/cmr/m/n/10 . The r
-e-sult-ing curve was
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--59
+Underfull \hbox (badness 10000) in paragraph at lines 19--22
 
  []
 
-[4 <./gv_3-4-5-7.pdf> <./gv_theo_exp_7.pdf> <./gv_theo_exp_10.pdf> <./gv_theore
-tical_4-5-10.pdf> <./iv_theoretical_4-5-10.pdf>]
-Underfull \hbox (badness 1701) in paragraph at lines 61--62
+<gv_theo_exp_7.pdf, id=53, 849.1725pt x 596.2275pt>
+File: gv_theo_exp_7.pdf Graphic file (type pdf)
+ <use gv_theo_exp_7.pdf>
+Underfull \hbox (badness 1701) in paragraph at lines 31--32
 \OML/cmm/m/it/10 C[]$ \OT1/cmr/m/n/10 it quickly be-comes ap-par-ent that there
 
  []
 
 
-Underfull \hbox (badness 1383) in paragraph at lines 61--62
+Underfull \hbox (badness 1383) in paragraph at lines 31--32
 \OT1/cmr/m/n/10 are cer-tain qual-i-ta-tive dif-fer-ences be-tween the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+<residual.pdf, id=54, 849.1725pt x 596.2275pt>
+File: residual.pdf Graphic file (type pdf)
+ <use residual.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<gv_3-4-5-7.pdf, id=55, 849.1725pt x 596.2275pt>
+File: gv_3-4-5-7.pdf Graphic file (type pdf)
+ <use gv_3-4-5-7.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+EdNote!
+Underfull \hbox (badness 10000) in paragraph at lines 48--49
+
+ []
+
+[4 <./gv_theoretical_4-5-10.pdf> <./iv_theoretical_4-5-10.pdf> <./gv_theo_exp_7
+.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+
+ []
+
+<conductance2.pdf, id=77, 849.1725pt x 596.2275pt>
+File: conductance2.pdf Graphic file (type pdf)
+ <use conductance2.pdf>
+EdNote!
+
+LaTeX Warning: Reference `conductance2' on page 5 undefined on input line 65.
+
+
+Underfull \hbox (badness 1997) in paragraph at lines 65--66
+[]\OT1/cmr/m/n/10 Prior to in-sert-ing He into the cryo-stat as
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+
+ []
+
+EdNote! EdNote!
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 
  []
 
 
-Underfull \hbox (badness 1360) in paragraph at lines 64--65
-\OT1/cmr/m/n/10 a-ture(see GRAPH REF) in the range of our
+LaTeX Warning: Marginpar on page 5 moved.
+
+<bcs_gap2.pdf, id=78, 302.12875pt x 311.1625pt>
+File: bcs_gap2.pdf Graphic file (type pdf)
+ <use bcs_gap2.pdf>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+EdNote!
+Underfull \hbox (badness 10000) in paragraph at lines 77--78
+
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
+[5 <./residual.pdf> <./gv_3-4-5-7.pdf> <./conductance2.pdf>] (./low_temp.tex
+<gv_theo_exp_10.pdf, id=97, 849.1725pt x 596.2275pt>
+File: gv_theo_exp_10.pdf Graphic file (type pdf)
+ <use gv_theo_exp_10.pdf>
+EdNote!
+Underfull \hbox (badness 3612) in paragraph at lines 10--11
+\OT1/cmr/m/n/10 ing state, cre-at-ing this com-bined ef-fect be-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
-
- []
-
-[5 <./residual.pdf> <./bcs_gap2.pdf> <./conductance2.pdf>] (./low_temp.tex))
-Underfull \hbox (badness 2608) in paragraph at lines 69--70
+))
+Underfull \hbox (badness 2608) in paragraph at lines 71--72
 \OT1/cmr/m/it/10 Mea-sure-ments on Su-per-im-posed Lay-ers of
  []
 
-[6
-
-] (./tunnel_main.aux)
+[6 <./bcs_gap2.pdf> <./gv_theo_exp_10.pdf>] (./tunnel_main.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -421,34 +424,37 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1746 strings out of 94073
- 21572 string characters out of 1162983
- 77566 words of memory out of 1500000
- 5002 multiletter control sequences out of 10000+50000
- 14991 words of font info for 57 fonts, out of 1200000 for 2000
+ 1812 strings out of 94073
+ 22167 string characters out of 1162983
+ 79746 words of memory out of 1500000
+ 5061 multiletter control sequences out of 10000+50000
+ 16213 words of font info for 61 fonts, out of 1200000 for 2000
  645 hyphenation exceptions out of 8191
- 27i,13n,22p,856b,304s stack positions out of 5000i,500n,6000p,200000b,5000s
+ 27i,13n,22p,946b,304s stack positions out of 5000i,500n,6000p,200000b,5000s
 </usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx10.pfb></usr/l
 ocal/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx12.pfb></usr/local/texl
 ive/2007/texmf-dist/fonts/type1/bluesky/cm/cmbx5.pfb></usr/local/texlive/2007/t
 exmf-dist/fonts/type1/bluesky/cm/cmbx7.pfb></usr/local/texlive/2007/texmf-dist/
 fonts/type1/bluesky/cm/cmbx9.pfb></usr/local/texlive/2007/texmf-dist/fonts/type
-1/bluesky/cm/cmex10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky
-/cm/cmmi10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmmi7
-.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmmi9.pfb></usr
-/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/local/tex
-live/2007/texmf-dist/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/texlive/2007/
-texmf-dist/fonts/type1/bluesky/cm/cmr5.pfb></usr/local/texlive/2007/texmf-dist/
-fonts/type1/bluesky/cm/cmr7.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1
-/bluesky/cm/cmr9.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm
-/cmsy10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy7.pf
-b></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy9.pfb></usr/lo
-cal/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmti10.pfb></usr/local/texli
-ve/2007/texmf-dist/fonts/type1/bluesky/cm/cmti9.pfb></usr/local/texlive/2007/te
-xmf-dist/fonts/type1/bluesky/ams/msbm10.pfb>
-Output written on tunnel_main.pdf (6 pages, 598086 bytes).
+1/bluesky/cm/cmcsc10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesk
+y/cm/cmex10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmmi
+10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmmi7.pfb></u
+sr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmmi9.pfb></usr/local/t
+exlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmr10.pfb></usr/local/texlive/200
+7/texmf-dist/fonts/type1/bluesky/cm/cmr12.pfb></usr/local/texlive/2007/texmf-di
+st/fonts/type1/bluesky/cm/cmr5.pfb></usr/local/texlive/2007/texmf-dist/fonts/ty
+pe1/bluesky/cm/cmr6.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky
+/cm/cmr7.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmr9.pf
+b></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmss8.pfb></usr/lo
+cal/texlive/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy10.pfb></usr/local/texli
+ve/2007/texmf-dist/fonts/type1/bluesky/cm/cmsy7.pfb></usr/local/texlive/2007/te
+xmf-dist/fonts/type1/bluesky/cm/cmsy9.pfb></usr/local/texlive/2007/texmf-dist/f
+onts/type1/bluesky/cm/cmti10.pfb></usr/local/texlive/2007/texmf-dist/fonts/type
+1/bluesky/cm/cmti9.pfb></usr/local/texlive/2007/texmf-dist/fonts/type1/bluesky/
+ams/msbm10.pfb>
+Output written on tunnel_main.pdf (6 pages, 617032 bytes).
 PDF statistics:
- 174 PDF objects out of 1000 (max. 8388607)
+ 186 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
