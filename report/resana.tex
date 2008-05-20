@@ -1,67 +1,51 @@
-
-
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.45\textwidth]{gv_3-4-5-7}
-\caption{Hola\label{gv_3}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{gv_theo_exp_7.pdf}
-\caption{Hola\label{iv_theo_exp}}
+\includegraphics[width=0.45\textwidth]{gv_theoretical_4-5-10}
+\caption{\small BCS theoretical conductance curves for different temperatures.
+\label{gv_theoretical_4-5-10}}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.45\textwidth]{gv_theo_exp_10.pdf}
-\caption{Hola\label{graph3}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{gv_theoretical_4-5-10.pdf}
-\caption{Hola\label{graph4}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{iv_theoretical_4-5-10.pdf}
-\caption{Hola\label{graph5}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{residual}
-\caption{Hola\label{graph5}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{bcs_gap2}
-\caption{\small Reduced values of the observed energy gap as a function of the reduced temperature, after Towsend and Sutton. The solid curve is drawn for the BCS theory. \label{bcs_gap}}
+\includegraphics[width=0.45\textwidth]{iv_theoretical_4-5-10}
+\caption{\small BCS theoretical current curves for different temperatures. 
+\label{iv_theoretical_4-5-10}}
 \end{figure}
 
 
-\begin{figure}
-\centering
-\includegraphics[width=0.45\textwidth]{conductance2}
-\caption{\small Conductance curves . \label{conductance}}
-\end{figure}
-
- \ednote{put all the graphics in the correct places and reference them}
 
 \subsection{Data Analysis}
 %0.- Graphing method: smoothing (same order for theo and exp), derivation method (linear least squares, g is the slope...). Smoothig looses information...
 Our first step in analyzing the data collected was to plot it. Since the shape of the energy spectrum is given by the derivative of the I-V curve, it was necessary to numerically calculate the derivative. The method we chose to do this was to fit a linear function to $n$ neighboring data points using a straightforward least squares approach. The slope of the fitted function was taken as the derivative.This had the additional benefit of performing some smoothing. Of course there is some information lost in the process, but this was not deemed critical as the number of points collected was generally much larger than $n$.\\
 %Generation of theoretical Data
-In order to estimate the energy gap of our Pb sample it was necessary to evaluate the integral in \ref{inegral}, and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm  \ednote{Citation for this from Numerical Rec.}, while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \approx \text{const.}$ for small $x$, as it is finite and nonzero for $x=0$, while the second part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$ diverges for $x\to0$. It can, however, be integrated analytically up to $0$,\ednote{perhaps the analytical integral expression here?}thus enabling us to efficiently integrate for all $x$. The resulting curve was derivated in the same manner as the experimental data, to ensure their comparability.\\
+In order to estimate the energy gap of our Pb sample it was necessary to evaluate the integral in \ref{ins_numerical}, and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm  \ednote{Citation for this from Num. Recipes.}, while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \approx \text{const.}$ for small $x$, as it is finite and nonzero for $x=0$, while the second part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$ diverges for $x\to0$. It can, however, be integrated analytically up to $0$,\ednote{perhaps the analytical integral expression here?}thus enabling us to efficiently integrate for all $x$. The resulting curve was derivated in the same manner as the experimental data, to ensure their comparability.\\
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{gv_theo_exp_7}
+\caption{\small Experimental data and BCS theoretical prediction for $1.45 K$. The different density of states of Pb with respect to BCS causes the discrepancy. 
+\label{gv_theo_exp_7}}
+\end{figure}
 
 %1.- BCS does not fully describe the measured data. The density of states is different... --> Residual
-When plotting the derivatives in this way and comparing them qualitatively to each other for some arbitrary but reasonable values of $T$,$\Delta$ and $C_{NN}$ it quickly becomes apparent that there are certain qualitative differences between the experimental results and the results predicted by the BCS theory. Specifically, there are some bulges in the conductance curves outside the gap in the experimental data which are not present in the theory. \ednote{Graph reference}\\
+When plotting the derivatives in this way and comparing them qualitatively to each other for some arbitrary but reasonable values of $T$,$\Delta$ and $C_{NN}$ it quickly becomes apparent that there are certain qualitative differences between the experimental results and the results predicted by the BCS theory. Specifically, there are some bulges in the conductance curves outside the gap in the experimental data which are not present in the theory (see fig. \ref{gv_theo_exp_7}).\\
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{residual}
+\caption{\small Residual between theoretical and experimental current curve for $1.45 K$. The phonon structure arises clearly. 
+\label{residual}}
+\end{figure}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{gv_3-4-5-7}
+\caption{\small Measured conductance for 4 different temperatures. The peaks coincidence sustains the nearly invariance of the gap for this temperature range. The phonon structure is the same for all.
+\label{gv_3-4-5-7}}
+\end{figure}
 
 %2.- Might be electron-phonon scattering.
-Our best guess as to what might me causing this effect is electron-phonon scattering. \ednote{Add a citation for this?} It seems not to vary significantly with Temperature(see \ednote{Graph reference}) in the range of our observations. The shape of the deviation from the current predicted by BCS theory can be seen in \ednote{Graph reference}.\\
+Our best guess as to what might be causing this effect is electron-phonon scattering. \ednote{Add a citation for this?} It seems not to vary significantly with Temperature(see figure \ref{gv_3-4-5-7}) in the range of our observations. The shape of the deviation from the current predicted by BCS theory can be seen in figure \ref{residual}.\\
 
 %3.- Fitting by generic least squares algorithm cannot be correct.
 The initial idea for estimating the energy gap and the other parameters of the model($T$,$C_{NN}$) was to fit them using a least squares method. We tried to do so using a Levenberg-Marquard routine. This approach proved inefficient, with the results being rather dependent on the initial guess, and convergence reached at unexpected values. This is probably due to the algorithm over-fitting in the region affected by the model insufficiencies described above, as well as the high degree of nonlinearity exhibited by the function.\\
@@ -70,13 +54,27 @@ The initial idea for estimating the energy gap and the other parameters of the m
 A more feasible method was to estimate normal-normal conductance and temperature from other measurements, and then fitting the value of the gap "by hand". 
 
 \subsection{Results}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{conductance2}
+\caption{\small Conductance curves . \label{conductance}}
+\end{figure}
+
 %	1st : conductance by room temperature and nitrogen temperature data measurements (figure)
-Prior to inserting He into the cryostat as described in\ednote{section reference}, we measured the conductivity of the sample several times at different temperatures. From these measurements we determined $C_{NN}=0.006\pm0.0005 S$ The values taken in the relevant range of voltages can be seen in \ednote{Graph reference}.\\
+Prior to inserting He into the cryostat as described in\ednote{section reference}, we measured the conductivity of the sample several times at different temperatures. From these measurements we determined $C_{NN}=0.006\pm0.0005 S$. The values taken in the relevant range of voltages can be seen in  figure \ref{conductance2}.\\
+
 %	2nd : T by helium vapor pressure --> manometer¿?¿? error??? 
 The values for the Temperature were obviously different for each measurement. We determined it by means of associating temperatures to pressures at the surface of the $He^4$ using the vapor pressure curve. As described earlier, there was a manometer connected to the cryostat, and readings were taken at every measurement. This assumes that the pressure is the same at the surface and at the top of the cryostat, where the measurement is taken.\ednote{Why is this assumption OK}  \ednote{add a temperature/pressure table?} The measurements from the manometer might also have been faulty, the pressure shown at room pressure was too low. The difference caused by this miscalibration seemed to be very low at lower pressures.\\
 
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.45\textwidth]{bcs_gap2}
+\caption{\small Reduced values of the observed energy gap as a function of the reduced temperature, after Towsend and Sutton. The solid curve is drawn for the BCS theory. \label{bcs_gap2}}
+\end{figure}
+
 %	3rd : T and gap. The gap is the same for all T's because our range is small (figure). We give a sufficient large error for it (subjective...)
-With the other parameters now fixed, the with of the energy gap can now be fitted. Theoretically it depends on the temperature, but in the range of temperatures we measured in this change is very small, as can be seen in\ednote{Graph reference}. The amount of change is\ednote{short calculation of error percentage}, which is about the error we expected to be caused by our fitting of the value "by hand", and we consequently assumed the value to be the same in all the measurements. Fitting the width by this process for the different measurements gave us a value of  $1.4\pm0.1$ meV. The error is a rough estimate based on the finesse with which we manually adjusted the gap. It is probably a little to large, yet we decided to give this slightly higher figure to account for the uncertainties in the temperature.\\
+With the other parameters now fixed, the with of the energy gap can now be fitted. Theoretically it depends on the temperature, but in the range of temperatures we measured in this change is very small, as can be seen in figure \ref{bcs_gap2}. The amount of change is\ednote{short calculation of error percentage}, which is about the error we expected to be caused by our fitting of the value "by hand", and we consequently assumed the value to be the same in all the measurements. Fitting the width by this process for the different measurements gave us a value of  $1.4\pm0.1$ meV. The error is a rough estimate based on the finesse with which we manually adjusted the gap. It is probably a little to large, yet we decided to give this slightly higher figure to account for the uncertainties in the temperature.\\
 
 %	4th : The temperatures are consistent
 
