@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       145,          7]
-NotebookDataLength[     53388,       1181]
-NotebookOptionsPosition[     51450,       1109]
-NotebookOutlinePosition[     51789,       1124]
-CellTagsIndexPosition[     51746,       1121]
+NotebookDataLength[     55295,       1244]
+NotebookOptionsPosition[     53239,       1168]
+NotebookOutlinePosition[     53579,       1183]
+CellTagsIndexPosition[     53536,       1180]
 WindowFrame->Normal
 ContainsDynamic->False*)
 
@@ -1105,10 +1105,69 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{"fermi_diff", "[", "0", "]"}]], "Output",
  CellChangeTimes->{{3.418541553166327*^9, 3.418541562660152*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"x", "+", "\[Epsilon]"}], 
+      SqrtBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "+", 
+          RowBox[{"2", " ", "\[Epsilon]"}]}], ")"}], " ", "x"}]]], ",", "x"}],
+     "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "3"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.420444442509302*^9, 3.420444475504869*^9}, {
+  3.420444622240646*^9, 3.4204446332716093`*^9}, {3.420444799726493*^9, 
+  3.420444818907887*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{
+    SqrtBox["2"], " ", 
+    SqrtBox["\[Epsilon]"], " ", 
+    SqrtBox["x"]}], "+", 
+   FractionBox[
+    SuperscriptBox["x", 
+     RowBox[{"3", "/", "2"}]], 
+    RowBox[{"2", " ", 
+     SqrtBox["2"], " ", 
+     SqrtBox["\[Epsilon]"]}]], "-", 
+   FractionBox[
+    SuperscriptBox["x", 
+     RowBox[{"5", "/", "2"}]], 
+    RowBox[{"16", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SqrtBox["2"], " ", 
+       SuperscriptBox["\[Epsilon]", 
+        RowBox[{"3", "/", "2"}]]}], ")"}]}]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "x", "]"}], 
+     RowBox[{"7", "/", "2"}]],
+    SeriesData[$CellContext`x, 0, {}, 1, 7, 2],
+    Editable->False]}],
+  SeriesData[$CellContext`x, 0, {
+   2^Rational[1, 2] $CellContext`\[Epsilon]^Rational[1, 2], 0, Rational[1, 2] 
+    2^Rational[-1, 2] $CellContext`\[Epsilon]^Rational[-1, 2], 0, 
+    Rational[-1, 16] 
+    2^Rational[-1, 2] $CellContext`\[Epsilon]^Rational[-3, 2]}, 1, 7, 2],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.420444449765381*^9, 3.420444476325778*^9}, 
+   3.4204446345076857`*^9, {3.420444804563773*^9, 3.420444819878839*^9}}]
 }, Open  ]]
 },
 WindowSize->{1233, 814},
-WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowMargins->{{11, Automatic}, {Automatic, 0}},
 FrontEndVersion->"6.0 for Mac OS X PowerPC (32-bit) (June 19, 2007)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1182,6 +1241,10 @@ Cell[43199, 958, 7934, 137, 416, "Output"]
 Cell[CellGroupData[{
 Cell[51170, 1100, 131, 2, 27, "Input"],
 Cell[51304, 1104, 130, 2, 27, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51471, 1111, 577, 17, 50, "Input"],
+Cell[52051, 1130, 1172, 35, 56, "Output"]
 }, Open  ]]
 }
 ]
