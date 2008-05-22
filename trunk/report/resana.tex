@@ -1,24 +1,14 @@
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{gv_theoretical_4-5-10}
-\caption{\small BCS theoretical conductance curves for different temperatures.
-\label{gv_theoretical_4-5-10}}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.45\textwidth]{iv_theoretical_4-5-10}
-\caption{\small BCS theoretical current curves for different temperatures. 
-\label{iv_theoretical_4-5-10}}
-\end{figure}
-
-
-
 \subsection{Data Analysis}
-%0.- Graphing method: smoothing (same order for theo and exp), derivation method (linear least squares, g is the slope...). Smoothig looses information...
-Our first step in analyzing the data collected was to plot it. Since the shape of the energy spectrum is given by the derivative of the I-V curve, it was necessary to numerically calculate the derivative. The method we chose to do this was to fit a linear function to $n$ neighboring data points using a straightforward least squares approach. The slope of the fitted function was taken as the derivative.This had the additional benefit of performing some smoothing. Of course there is some information lost in the process, but this was not deemed critical as the number of points collected was generally much larger than $n$.
-%Generation of theoretical Data
-In order to estimate the energy gap of our Pb sample it was necessary to evaluate the integral in \ref{ins_numerical}, and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm \cite{recipes}, while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \approx \text{const.}$ for small $x$, as it is finite and nonzero for $x=0$, while the second part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$ diverges for $x\to0$. It can, however, be integrated analytically up to $0$,\ednote{perhaps the analytical integral expression here?}thus enabling us to efficiently integrate for all $x$. The resulting curve was derivated in the same manner as the experimental data, to ensure their comparability.
+Our first step in analyzing the collected data was to plot it. Since the shape of the energy spectrum is given by the derivative of the I-V curve, it was necessary to numerically calculate the derivative. The method we chose to do this was to fit a linear function to $n$ neighboring data points using a straightforward least squares approach. The slope of the fitted function was taken as the derivative.This had the additional benefit of performing some smoothing. Of course there is some information lost in the process, but this was not deemed critical as the number of points collected was generally much larger than $n$.
+
+In order to estimate the energy gap of our Pb sample it was necessary to evaluate the integral in \ref{ins_numerical}, 
+\begin{eqnarray*}\label{ins_numerical2}
+I^{NS} &=& \frac{C^{NN}}{e} \int_{0}^{\infty} dx\ \frac{x+\Delta}{\sqrt{x(x+2 \Delta)}} \times
+		\nonumber \\
+		&\times& [f(x+ \Delta-eV)-f(x+ \Delta +eV)],
+		\nonumber \\
+\end{eqnarray*}
+and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm \cite{recipes}, while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \approx \text{const.}$ for small $x$, as it is finite and nonzero for $x=0$, while the second part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$ diverges for $x\to0$. It can, however, be integrated analytically up to $0$,\ednote{perhaps the analytical integral expression here? \\ Is the expression correct? Sure?}thus enabling us to efficiently integrate for all $x$. The resulting curve was derivated in the same manner as the experimental data, to ensure their comparability.
 
 \begin{figure}[h!]
 \centering
