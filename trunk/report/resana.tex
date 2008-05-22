@@ -8,7 +8,12 @@ I^{NS} &=& \frac{C^{NN}}{e} \int_{0}^{\infty} dx\ \frac{x+\Delta}{\sqrt{x(x+2 \D
 		&\times& [f(x+ \Delta-eV)-f(x+ \Delta +eV)],
 		\nonumber \\
 \end{eqnarray*}
-and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm \cite{recipes}, while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \approx \text{const.}$ for small $x$, as it is finite and nonzero for $x=0$, while the second part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$ diverges for $x\to0$. It can, however, be integrated analytically up to $0$,\ednote{perhaps the analytical integral expression here? \\ Is the expression correct? Sure?}thus enabling us to efficiently integrate for all $x$. The resulting curve was derivated in the same manner as the experimental data, to ensure their comparability.
+and compare the results to the experimental data. In order to do so we split the integral in 2 parts. The high energies were evaluated numerically using a Romberg-Method algorithm \cite{recipes}, while the lower energies were estimated analytically. It was assumed that $ [f(x+ \Delta-eV)-f(x+ \Delta +eV)] \approx \text{const.}$ for small $x$, as it is finite and nonzero for $x=0$, while the other part, $\frac{x+\Delta}{\sqrt{x(x+2 \Delta)}}$, diverges for $x\to0$. It can, however, be integrated analytically up to $0$, thus enabling us to efficiently integrate for all $x$. 
+\begin{equation*}\label{num}
+ \int_{0}^{a} dx\ \frac{x+\Delta}{\sqrt{x(x+2 \Delta)}} = \sqrt{a(2\Delta+a)}
+\end{equation*}
+
+To get the conductance curve, the resulting theoretical I-V curve was derivated in the same manner as the experimental data, i.e. with the same degree of smoothing, to ensure their comparability.
 
 \begin{figure}[h!]
 \centering
