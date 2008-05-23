@@ -39,7 +39,7 @@ c		= 0.0057
 !close(unit=1,status="keep")
 !dim=dim-1
 
-vmax=0.01
+vmax=0.02
 dim=2001
 do n=1,dim
 v(n)=vmax-(n-1)*(2*vmax/dim)
