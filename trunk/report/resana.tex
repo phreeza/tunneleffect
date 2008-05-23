@@ -1,4 +1,12 @@
 \subsection{Data Analysis}
+
+\begin{figure}[b!]
+\centering
+\includegraphics[width=0.45\textwidth]{iv-7-exp_theo}
+\caption{\small Experimental data and BCS theoretical prediction for $1.45 K$. The different density of states of Pb with respect to BCS causes the discrepancy. 
+\label{iv-7-exp_theo}}
+\end{figure}
+
 Our first step in analyzing the collected data was to plot it. Since the shape of the energy spectrum is given by the derivative of the I-V curve, it was necessary to numerically calculate the derivative. The method we chose to do this was to fit a linear function to $n$ neighboring data points using a straightforward least squares approach. The slope of the fitted function was taken as the derivative.This had the additional benefit of performing some smoothing. Of course there is some information lost in the process, but this was not deemed critical as the number of points collected was generally much larger than $n$.
 
 In order to estimate the energy gap of our Pb sample it was necessary to evaluate the integral in \ref{ins_numerical}, 
@@ -18,7 +26,7 @@ To get the conductance curve, the resulting theoretical I-V curve was derivated 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.45\textwidth]{gv_theo_exp_7}
-\caption{\small Experimental data and BCS theoretical prediction for $1.45 K$. The different density of states of Pb with respect to BCS causes the discrepancy. 
+\caption{\small Experimental data and BCS theoretical prediction for Conductance at $1.45 K$. The discrepancy in I-V curve in fig. \ref{iv-7-exp_theo} has its corresponding here. 
 \label{gv_theo_exp_7}}
 \end{figure}
 
