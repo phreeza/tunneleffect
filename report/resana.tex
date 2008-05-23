@@ -32,6 +32,13 @@ When plotting the derivatives in this way and comparing them qualitatively to ea
 \label{residual}}
 \end{figure}
 
+
+Our best guess as to what might be causing this effect is electron-phonon scattering. It seems not to vary significantly with Temperature (see fig. \ref{gv_3-4-5-7}) in the range of our observations. The shape of the deviation from the current predicted by BCS theory can be seen in figure \ref{residual}. Giaver also reports the same effect in a later paper \cite{giaever2}, and suggests it can be accounted for using a non-constant energy-gap parameter.
+
+The initial idea for estimating the energy gap and the other parameters of the model($T$,$C_{NN}$) was to fit them using a least squares method. We tried to do so using a Levenberg-Marquard routine. This approach proved inefficient, with the results being rather dependent on the initial guess, and convergence reached at unexpected values. This is probably due to the algorithm over-fitting in the region affected by the model insufficiencies described above, as well as the high degree of nonlinearity exhibited by the function.
+
+A more feasible method was to estimate normal-normal conductance and temperature from other measurements, and then fitting the value of the gap "by hand".
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.45\textwidth]{gv_3-4-5-7}
@@ -39,34 +46,27 @@ When plotting the derivatives in this way and comparing them qualitatively to ea
 \label{gv_3-4-5-7}}
 \end{figure}
 
-%2.- Might be electron-phonon scattering.
-Our best guess as to what might be causing this effect is electron-phonon scattering. \ednote{Add a citation for this?} It seems not to vary significantly with Temperature(see figure \ref{gv_3-4-5-7}) in the range of our observations. The shape of the deviation from the current predicted by BCS theory can be seen in figure \ref{residual}. Giaver also reports the same effect in a later paper\ednote{reference for this, it is the paper about measuring at below 1K}, and suggests it can be accounted for using a non-constant energy-gap parameter.
 
-%3.- Fitting by generic least squares algorithm cannot be correct.
-The initial idea for estimating the energy gap and the other parameters of the model($T$,$C_{NN}$) was to fit them using a least squares method. We tried to do so using a Levenberg-Marquard routine. This approach proved inefficient, with the results being rather dependent on the initial guess, and convergence reached at unexpected values. This is probably due to the algorithm over-fitting in the region affected by the model insufficiencies described above, as well as the high degree of nonlinearity exhibited by the function.
-%4.- The best way: by hand. how?
-A more feasible method was to estimate normal-normal conductance and temperature from other measurements, and then fitting the value of the gap "by hand". 
 \subsection{Results}
+
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.45\textwidth]{conductance2}
 \caption{\small Conductance curves . \label{conductance}}
 \end{figure}
-%	1st : conductance by room temperature and nitrogen temperature data measurements (figure)
-Prior to inserting He into the cryostat as described in\ednote{section reference}, we measured the conductivity of the sample several times at different temperatures. From these measurements we determined $C_{NN}=0.006\pm0.0005 S$. The values taken in the relevant range of voltages can be seen in  figure \ref{conductance2}.
+
+Prior to inserting He into the cryostat as described, we measured the conductivity of the sample several times at different temperatures. From these measurements we determined $C_{NN}=0.006\pm0.0005 S$. The values taken in the relevant range of voltages can be seen in  figure \ref{conductance2}.
 
 %	2nd : T by helium vapor pressure --> manometer¿?¿? error??? 
-The values for the Temperature were obviously different for each measurement. We determined it by means of associating temperatures to pressures at the surface of the $He^4$ using the vapor pressure curve. As described earlier, there was a manometer connected to the cryostat, and readings were taken at every measurement. This assumes that the pressure is the same at the surface and at the top of the cryostat, where the measurement is taken.\ednote{Why is this assumption OK}  \ednote{add a temperature/pressure table?} The measurements from the manometer might also have been faulty, the pressure shown at room pressure was too low. The difference caused by this miscalibration seemed to be very low at lower pressures.
+The values for the Temperature were obviously different for each measurement. We determined it by means of associating temperatures to pressures at the surface of the $He^4$ using the vapor pressure curve. As described earlier, there was a manometer connected to the cryostat, and readings were taken at every measurement. This assumes that the pressure is the same at the surface and at the top of the cryostat, where the measurement is taken \ednote{Why is this assumption OK}. The measurements from the manometer might also have been faulty, the pressure shown at room pressure was too low (700 mbar). The difference caused by this miscalibration seemed to be very low at lower pressures, of about 5 mbar, and hence less than $0.1\ K$.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.45\textwidth]{bcs_gap2}
 \caption{\small Reduced values of the observed energy gap as a function of the reduced temperature, after Towsend and Sutton. The solid curve is drawn for the BCS theory. \label{bcs_gap2}}
 \end{figure}
-%	3rd : T and gap. The gap is the same for all T's because our range is small (figure). We give a sufficient large error for it (subjective...)
-With the other parameters now fixed, the with of the energy gap can now be fitted. Theoretically it depends on the temperature, but in the range of temperatures we measured in this change is very small, as can be seen in figure \ref{bcs_gap2}. The amount of change is\ednote{short calculation of error percentage}, which is about the error we expected to be caused by our fitting of the value "by hand", and we consequently assumed the value to be the same in all the measurements. Fitting the width by this process for the different measurements gave us a value of  $1.4\pm0.1$ meV. The error is a rough estimate based on the finesse with which we manually adjusted the gap. It is probably a little to large, yet we decided to give this slightly higher figure to account for the uncertainties in the temperature.
-%	4th : The temperatures are consistent
-%------------------
-%5.- Last measurement gives qualitatively different results... Possible explanation: normal-super and super-super junctions in parallel. Tc is different for films, greater than bulk Tc...
+
+With the other parameters now fixed, the with of the energy gap can now be fitted. Theoretically it depends on the temperature, but in the range of temperatures we measured in this change is very small, as can be seen in figure \ref{bcs_gap2}. The amount of change for temperatures between $1.2\ K$ and $4.2\ K$ is $\approx 0.07\Delta_0$, which is about $0.1 meV$, the error we expected to be caused by our fitting of the value "by hand", and we consequently assumed the value to be the same in all the measurements. Fitting the width by this process for the different measurements gave us a value of  $1.4\pm0.1$ meV. The error is a rough estimate based on the finesse with which we manually adjusted the gap. It is probably a little to large, yet we decided to give this slightly higher figure to account for the uncertainties in the temperature.
+
 \input{low_temp}
 
