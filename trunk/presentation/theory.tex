@@ -1,21 +1,81 @@
 %---------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Efecto túnel cuántico}
-Explicar simplemente el efecto túnel cuántico... 
+\frametitle{Efecto t\'unel cu\'antico}
 
-Fórmula, quizá sólo la dependencia de la anchura y del potencial...
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.7\textwidth]{tunnelling}
+\end{figure}
+
+Coeficiente de transmisi\'on: $T \propto e^{-d}$ \hspace{0.5cm} si $\rho d >>1$, $\rho=\sqrt{\frac{2m(V_0-E)}{\hbar^2}}$
+
+\pause
+\begin{center}
+Pero lo que tenemos nosotros es... \textcolor{red}{una transici\'on discreto $\rightarrow$ cont\'inuo !!}
+
+\vspace{0.3cm}
+$\Downarrow$
+
+\vspace{0.3cm}
+\textcolor{blue}{La Regla de Oro de Fermi}
+\end{center}
 
 \end{frame}
 %---------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{}
+\frametitle{C\'alculo de I(V) con la Regla de Oro de Fermi 1}
+
+1 \textcolor{blue}{La tasa de transici\'on $W$ de un $e^-$ para pasar de una estado ocupado en la l\'amina 1 a un estado vac\'io de la l\'amina 2:}
+\begin{equation}\label{probability1}
+W_{1\to 2}^{1e} = \frac{2\pi}{\hbar} |T_{21}|^2 f(\epsilon_{\mathbf{p_1}}) [1-f(\epsilon_{\mathbf{p_2}})]
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}})\delta_{s_1s_2},
+\end{equation}
+
+\pause
+2 \textcolor{blue}{Asumiremos que el hamiltoniano no depende del \emph{esp\'in} y que acopla d\'ebilmente los eletrodos si el potencial aplicado es peque\~no respecto a $\epsilon_F$.}
+$$V < 3meV << 10eV \approx \epsilon_F$$
+\textcolor{blue}{As\'i que la tasa total de transici\'on del electrodo 1 al 2 ser\'a:}
+
+\begin{equation}\label{probability3}
+W_{1\to 2} = \frac{4\pi}{\hbar} |T|^2 \sum_{\mathbf{p_1},\mathbf{p_2}}  
+		f(\epsilon_{\mathbf{p_1}}) [1-f(\epsilon_{\mathbf{p_2}})] 
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}}).
+\end{equation}
+
+\pause
+\vspace{0.5cm}
+\begin{center}
+\emph{\textcolor{red}{La tasa de transici\'on en la direcci\'on opuesta es an\'aloga}}
+\end{center}
 
 \end{frame}
 %---------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{}
+\frametitle{C\'alculo de I(V) con la Regla de Oro de Fermi 2}
+
+\textcolor{blue}{Expresi\'on para la corriente en la direcci\'on $1\to 2$:}
+\begin{equation}\label{current1}
+I = e\ (W_{1\to 2} - W_{2\to 1}),
+\end{equation}
+
+\pause
+\begin{equation}\label{current2}
+I = \frac{4\pi e}{\hbar} |T|^2 \sum_{\mathbf{p_1},\mathbf{p_2}}  
+		[f(\epsilon_{\mathbf{p_1}})-f(\epsilon_{\mathbf{p_2}})] 
+		\delta(\epsilon_{\mathbf{p_1}}-\epsilon_{\mathbf{p_2}})
+\end{equation}
+
+\pause
+\textcolor{blue}{Momentos $\sim$ cuasicont\'inuo $\Rightarrow$ sumatorios $\sim$ integrales}
+
+\textcolor{blue}{Voltaje V $\Rightarrow$ $\mu_2-\mu_1=eV$}
+
+\begin{equation}\label{current3}
+I = \frac{4\pi e}{\hbar}  |T|^2 \int_{-\infty}^{\infty} d\epsilon\ N_1(\epsilon-eV)\ N_2(\epsilon) [f(\epsilon-eV)-f(\epsilon)]
+\end{equation}
+
 
 \end{frame}
 %---------------------------------------------------------------------------------------
@@ -23,12 +83,21 @@ Fórmula, quizá sólo la dependencia de la anchura y del potencial...
 \begin{frame}
 \frametitle{Densidad de estados para los 3 tipos de uniones}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=0.6\textwidth]{fermi_levels}
-%\caption{\small Densidad de estados para los 3 casos
-%\label{fermi_levels}}
-\end{figure}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	\begin{figure}[!h] \label{fermi_levels}
+	\includegraphics[width=\textwidth]{fermi_levels}
+	%\caption{\footnotesize{hola...}
+	\end{figure}
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{figure}[!h] \label{fermi_levels2}
+	\includegraphics[width=\textwidth]{fermi_levels2}
+	%\caption{\footnotesize{hola...}
+	\end{figure}
+\end{column}
+\end{columns}
+
 
 \end{frame}
 %---------------------------------------------------------------------------------------
