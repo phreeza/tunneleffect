@@ -103,25 +103,34 @@ I = \frac{4\pi e}{\hbar}  |T|^2 \int_{-\infty}^{\infty} d\epsilon\ N_1(\epsilon-
 %---------------------------------------------------------------------------------------
 %---------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{}
+\frametitle{Expresiones para I(V) seg\'un BCS en los 3 casos}
 
-\end{frame}
-%---------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{}
-
-\end{frame}
-%---------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{}
-
-\end{frame}
-%---------------------------------------------------------------------------------------
-%---------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{}
+\begin{columns}
+\begin{column}{0.35\textwidth}
+	\begin{figure}[!h] \label{fermi_levels}
+	\includegraphics[width=\textwidth]{fermi_levels}
+	\end{figure}
+\end{column}
+\begin{column}{0.65\textwidth}
+\begin{flushleft}
+	\begin{equation*}\label{inn}
+		I^{NN} = \frac{4\pi e}{\hbar} |T|^2 N_1(\mu)N_2(\mu) eV
+	\end{equation*}
+	\begin{equation*}\label{cnn}
+		C^{NN} = \frac{4\pi e}{\hbar} |T|^2 N_1(\mu)N_2(\mu) e
+	\end{equation*}
+\vspace{0.3cm}
+	\begin{equation*}\label{ins}
+		I^{NS} = \frac{C^{NN}}{e} \int_{-\infty}^{\infty} dE\ \frac{|E|}{\sqrt{E^2-\Delta^2}} [f(E-eV)-f(E)]
+	\end{equation*}
+\vspace{0.4cm}	
+	\begin{equation*}\label{iss}
+		I^{SS} = \frac{C^{NN}}{e} \int_{-\infty}^{\infty} dE\ 
+		\frac{E^2\ [f(E-eV)-f(E)]}{\sqrt{(E^2-\Delta_1 ^2)}\sqrt{(E^2-\Delta_2 ^2)}}
+	\end{equation*}
+\end{flushleft}
+\end{column}
+\end{columns}
 
 \end{frame}
 %---------------------------------------------------------------------------------------
