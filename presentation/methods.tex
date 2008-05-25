@@ -1,27 +1,77 @@
 
-%  \begin{itemize}%  \item<1-> Normal LaTeX class.%  \item<2-> Easy overlays.%  \item<3-> No external programs needed.      %  \end{itemize}
-
 
 %Slide Preparation
-\frame{  \frametitle{Preparaci\'on de la Muestra}
-  %grafica de la muestra
+\frame
+{
+  \frametitle{Preparaci\'on de la Muestra}
+  
+   \begin{itemize}
+      \item<1-> Hacemos un Sandwich de $Al$,$Al_2O_3$ y $Pb$
+      \item<2-> $Pb$ tiene $T_C$ mas alto, asi tenemos una union Super-Normal 
+      \item<3-> Preparacion por evaporacion en un vacio.
+      \item<4-> Tenemos varias  uniones en cada cristal.
+  \end{itemize}
+  
+  %grafica de la muestra(show at 4?)
 }
 
 
 
 %thickness estimation
 
-\frame{  \frametitle{Estimando las Anchuras de Capas}
+\frame
+{
+  \frametitle{Estimando las Anchuras de Capas}
+  
+  \begin{itemize}
+     \item<1-> 2 Metodos:
+        
+        \begin{enumerate}
+           \item<2-> Ley de Ohm: $h=\frac{\rho l}{Rb}$
+           \item<3-> Suponiendo evaporaci\'on isotropa: $h=\frac{V}{4\pi r}$
+        \end{enumerate}
+        
+     \item<4-> Metodo 1 no funciona, anchura no es bastante homogena.
+     \item<5-> Anchura y resistencia del aislante se controla por tiempo al aire.
+     
+     %Table from Giaever?      
+  \end{itemize}
+
+  
   %grafica? o solo formulas?
- }
+ 
+}
 
 %Cryostat
 
-\frame{  \frametitle{Enfriando la Muestra}
-  %grafica criostato}
+\frame
+{
+  \frametitle{Enfriando la Muestra}
+   \begin{itemize}
+     \item<1->Necesitamos $T$ entre $T_{C,Pb}=7.193 K$ y $T_{C,Al}=1.140 K$
+     \item<2->Ponemos la muestra en un criostato con $He$ liquido,
+     \item<3->A $p_{\text{ambiente}}$ $He$ liquido tiene $T=4.2 K$
+     \item<4->Podemos bajar $T$ bajando la presion en el criostato
+   \end{itemize}
+   
+  %grafica criostato
+  %Vapor pressure
+}
 
 %Measurement
   %4 teminales
   
   
-\frame{  \frametitle{Tomando los Datos}}
+\frame
+{
+  \frametitle{Tomando los Datos}
+  
+  \begin{itemize}
+    \item<1-> Solo nos interesa la conductancia de la union
+    \item<2-> Medimos con 4 terminales
+    \item<3-> Medimos a intervalos fijos de intensidad.
+    \item<4-> Rangos y resoluciones differentes.
+  \end{itemize}
+
+%4 term pic from wikipedia?
+}
