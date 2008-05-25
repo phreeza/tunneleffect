@@ -4,13 +4,24 @@
 \frame
 {
   \frametitle{Preparaci\'on de la Muestra}
-  
+  \begin{columns}
+\begin{column}{0.6\textwidth}
    \begin{itemize}
       \item<1-> Hacemos un Sandwich de $Al$,$Al_2O_3$ y $Pb$
-      \item<2-> $Pb$ tiene $T_C$ mas alto, asi tenemos una union Super-Normal 
+      \item<2-> $Pb$ tiene $T_C$ mas alto, asi tenemos una union Super-Normal
+      \item<2-> $Al_2O_3$ es el aislante, causa la bareda tunnel.
       \item<3-> Preparacion por evaporacion en un vacio.
       \item<4-> Tenemos varias  uniones en cada cristal.
   \end{itemize}
+  \end{column}
+\begin{column}{0.4\textwidth}
+	\begin{figure}[!h] \label{sample}
+	\includegraphics<4->[width=\textwidth]{sample}
+	\end{figure}
+\end{column}
+
+
+\end{columns}
   
   %grafica de la muestra(show at 4?)
 }
@@ -33,7 +44,10 @@
         
      \item<4-> Metodo 1 no funciona, anchura no es bastante homogena.
      \item<5-> Anchura y resistencia del aislante se controla por tiempo al aire.
-     
+     \begin{figure}[!h] \label{sample}
+	\includegraphics<6->[width=0.5\textwidth]{isolator}
+     \end{figure}
+
      %Table from Giaever?      
   \end{itemize}
 
@@ -47,12 +61,25 @@
 \frame
 {
   \frametitle{Enfriando la Muestra}
+   \begin{columns}
+   \begin{column}{0.6\textwidth}
+
    \begin{itemize}
      \item<1->Necesitamos $T$ entre $T_{C,Pb}=7.193 K$ y $T_{C,Al}=1.140 K$
      \item<2->Ponemos la muestra en un criostato con $He$ liquido,
      \item<3->A $p_{\text{ambiente}}$ $He$ liquido tiene $T=4.2 K$
      \item<4->Podemos bajar $T$ bajando la presion en el criostato
    \end{itemize}
+   
+     \end{column}
+     \begin{column}{0.4\textwidth}
+	\begin{figure}[!h] \label{sample}
+	\includegraphics<1-3>[width=\textwidth]{cryostat}
+	\includegraphics<4->[width=\textwidth]{vap_he}
+     \end{figure}
+\end{column}
+\end{columns}
+   
    
   %grafica criostato
   %Vapor pressure
@@ -65,13 +92,23 @@
 \frame
 {
   \frametitle{Tomando los Datos}
-  
+     \begin{columns}
+   \begin{column}{0.6\textwidth}
+
   \begin{itemize}
-    \item<1-> Solo nos interesa la conductancia de la union
+    \item<1-> Solo nos interesa la conductancia de la union, no la de los cables.
     \item<2-> Medimos con 4 terminales
     \item<3-> Medimos a intervalos fijos de intensidad.
     \item<4-> Rangos y resoluciones differentes.
   \end{itemize}
+  
+       \end{column}
+     \begin{column}{0.4\textwidth}
+	\begin{figure}[!h] \label{sample}
+	\includegraphics<2->[width=\textwidth]{4term}
+     \end{figure}
+\end{column}
+\end{columns}
 
 %4 term pic from wikipedia?
 }
