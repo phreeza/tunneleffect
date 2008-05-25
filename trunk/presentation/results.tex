@@ -1,16 +1,16 @@
-%\frame
-%{
-%  \frametitle{Features of the Beamer Class}
+%%\frame
+%%{
+%%  \frametitle{Features of the Beamer Class}
 
-%  \begin{itemize}
-%  \item<1-> Normal LaTeX class.
-%  \item<2-> Easy overlays.
-%  \item<3-> No external programs needed.      
-%  \end{itemize}
-%}
+%%  \begin{itemize}
+%%  \item<1-> Normal LaTeX class.
+%%  \item<2-> Easy overlays.
+%%  \item<3-> No external programs needed.      
+%%  \end{itemize}
+%%}
 
-
-%Numerical Integration/Differentiation
+%
+%%Numerical Integration/Differentiation
 
 \frame
 {
@@ -29,12 +29,16 @@
   
 }
 
-%Discrepancies
+%%Discrepancies
 
 
 \frame
 {
   \frametitle{Differencias al Modelo}
+  
+      \begin{columns}
+\begin{column}{0.6\textwidth}
+
   
   \begin{itemize}
   \item<1-> El modelo BCS no predica perfectamente la densidad de estados
@@ -42,8 +46,15 @@
   \item<3-> Giaever tambien observi\'o este efecto.
   \item<4-> Debido a esta diferencia no podemos ajustar los datos automaticamente.
   \end{itemize}
-  
-  
+    \end{column}
+\begin{column}{0.4\textwidth}
+	\begin{figure}[!h] \label{sample}
+	\includegraphics<1-2>[width=\textwidth]{gv_theo_exp_7}
+	\includegraphics<3->[width=\textwidth]{phonons_giaever}
+
+	\end{figure}
+\end{column}
+ \end{columns} 
 }
 
 %Calculating T and C
@@ -52,15 +63,27 @@
 \frame
 {
   \frametitle{Calculando Temperatura y Conductancia}
-  
+    \begin{columns}
+\begin{column}{0.6\textwidth}
     \begin{itemize}
      \item<1-> Tenemos 3 parametros independientes: $T$,$C_{NN}$ y $\Delta$ 
      \item<2-> Podemos hallar $T$ y $C_{NN}$ con otras medidas
      \item<3-> Calculamos $C_{NN}$ usando medidas de conductancia a $T\gg T_C$
      \item<4-> Calculamos $T$ usando las medidas de presion, y la presion vapor de $He$.
-  \end{itemize}}
+  \end{itemize}
+  
+    \end{column}
+    \begin{column}{0.4\textwidth}
+	\begin{figure}[!h] \label{sample}
+	\includegraphics<3>[width=\textwidth]{conductance2}
+	\includegraphics<4>[width=\textwidth]{vap_he}
+	\end{figure}
+    \end{column}
+    \end{columns} 
 
-%Fitting gap by hand
+}
+
+%%Fitting gap by hand
 
 
 \frame
@@ -75,18 +98,29 @@
      \end{itemize}
 }
 
-%Results
+%
+%%Results
 
-%Low Temp measurement
+%%Low Temp measurement
 
 \frame
 {
   \frametitle{Temperaturas mas bajas}
+    \begin{columns}
+\begin{column}{0.6\textwidth}
      \begin{itemize}
       \item<1-> Nuestra ultima medida tenia $T\approx 1.2K$
       \item<2-> Hemos encontrado una curva de conductancia muy distincta.
       \item<3-> Se puede explicar con la transicion de partes del $Al$ a superconductancia.
       \item<4-> No hay conductancia negativa, asi que no esta totalmente superconductor.
      \end{itemize}
-  
-}
+     
+       \end{column}
+\begin{column}{0.4\textwidth}
+	\begin{figure}[!h] \label{sample}
+	\includegraphics[width=\textwidth]{gv_theo_exp_10}
+	\end{figure}
+\end{column}
+\end{columns} 
+
+ }
