@@ -65,7 +65,7 @@ do k=1,dim
 end do
 open(unit=1,file=file_name_deriv,status="replace",action="write",position="rewind")
         do l=1,dim
-                write(unit=1,fmt=*) v(l),i(l)/0.006
+                write(unit=1,fmt=*) v(l),di(l)/0.006
         end do
 close(unit=1,status="keep")
 
