@@ -24,8 +24,8 @@ CHARACTER(LEN=50) :: file_name
 !Hay que escribir en el shell "iv epsilofile_name"
 
 epsilon	= 0.0014
-temp	= 1.45
-c		= 0.0057
+temp	= 0.0
+c		= 0.006
 !open(unit=1,file=file_name,status="old",action="read",position="rewind")
 !   dim=1
 !   !La variable io es cero solo si lee algo. Asi hacemos un bucle de numero de terminos desconocido
